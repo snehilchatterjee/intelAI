@@ -1,0 +1,25 @@
+
+
+sequence of images given we'll have to detect whether any of them is pixelated or not
+
+any part of image can contain the pixelation (from what I understand it's the mosiac blur)
+
+at least 30fps detection (60 is better)
+
+at least 20fps correction 
+
+
+Questions:
+
+1) Part of the image will be pixelated (like mosaic blur) or whole image (like a low-res image basically stretched) ?
+
+
+
+How can we reconstruct highly blurred objects, like human faces, without an existing photo of the subject (assuming that in real-life scenarios, we won't know what is behind the blurred area) ?
+
+
+
+
+Notes:
+
+
