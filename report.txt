@@ -20,7 +20,7 @@ why beta distribution:
 We want to increase the liklihood of getting lower values so that model can accurately tell when image is pixelated which will be harder for the model for lower scale values as the image is most similar when the scale values are smaller
 
 
-
+{insert beta distri graph}
 
 
 Scale factor used:
@@ -40,7 +40,7 @@ scale_factor = round(random_number, 1)
 why 1.6-3 ?
 
 
-because after carefully analyzing the images scaled from 1.6-3 (present in pixel_detection_analysis notebook) it was found that the pixelation become apprent after 1.6 scale factor (for any resolution) 
+because after carefully analyzing the images scaled from 1.6-3 (present in pixel_detection_analysis notebook) it was found that the pixelation become mostly apprent after 2 scale factor (for any resolution) 
 
 
 
@@ -81,14 +81,23 @@ Metrics:
 
 Method1:
 
-{Prcession,Accuracy,Recall,F1}
+Precision: 0.9893390191897654
+Recall: 0.9317269076305221
+F1 Score: 0.9596690796277145
+Test Accuracy: 0.961
+Test Loss: 0.12647114165042878
 
 Speed: 242086 FPS 
 Model size: 5.844 MB
 
-Method2 :
 
-{Prcession,Accuracy,Recall,F1}
+Method2:
+
+Precision: 0.9920279023418037
+Recall: 0.9832098765432099
+F1 Score: 0.9875992063492064
+Test Accuracy: 0.9875
+Test Loss: 0.03567060264130123
 
 Speed: 270567 FPS
 Model size: 5.844 MB
