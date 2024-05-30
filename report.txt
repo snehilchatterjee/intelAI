@@ -1,16 +1,59 @@
-Scale factor used:
+Directory description:
+
+
+
+
+Detection dataset details:
 
 
 
 
 Detection training approach:
 
-Select an image from the dataset and randomly select a scale factor between [1.6 and 3). This method is very effective as it will be impossible for the model to overfit since it can't memorise the dataset image as it will change verytime with a different scale factor.
+Select an image from the dataset and randomly select a scale factor between [1.6 and 3). This method is very effective as it will be impossible for the model to overfit since it can't memorise the dataset image as it will change everytime with a different scale factor.
+
+
 This selection is done using beta distribution.
 
 why beta distribution:
 
-We want to increase the liklihood of getting lower values so that model can accurately tell when image is pixelated
+We want to increase the liklihood of getting lower values so that model can accurately tell when image is pixelated which will be harder for the model for lower scale values as the image is most similar when the scale values are smaller
+
+
+
+
+
+Scale factor used:
+
+
+alpha = 2.0
+beta = 5.0
+
+random_beta = np.random.beta(alpha, beta)
+
+random_number = 1.6 + random_beta * (3 - 1.6)
+
+scale_factor = round(random_number, 1)
+
+{PLOT HERE}
+
+why 1.6-3 ?
+
+
+because after carefully analyzing the images scaled from 1.6-3 (present in pixel_detection_analysis notebook) it was found that the pixelation become apprent after 1.6 scale factor (for any resolution) 
+
+
+
+
+
+Major advantage of using this method of training:
+
+Theoretically this method of training should work with any resolution image and not just images that are 1920x1080 since it is based on scale factor and should still give the same strong perforamnce results.
+
+
+
+
+
 
 Two methods proposed for efficient and fast detection:
 
@@ -20,7 +63,7 @@ why this choice ?
 
 small size, fast and suitable for embedded systems make it most suitable choice
 
-2) Canny edge detection + mobilenetv3_small
+2) Canny edge detection + mobilenetv3_small (Novel method)
 
 same as above but using canny edge detection for pre processing
 
@@ -28,6 +71,41 @@ same as above but using canny edge detection for pre processing
 
 why this choice ?
 
-This choice can be very useful when the image is too pixelated (> 3x scale factor) then an algorithmic approach can be used rather than using machine learning. here we are using machine learning along with edge detection to demonstrate its capability for accurately detection pixelated images (we will see its potential use and how it beats the earlier model in our next section)
+Not only this proposed solution is faster than the earlier method it is more accurate than the 1st method as shown in the results.
 
+This choice can be very useful when the image is too pixelated (> 3x scale factor) then an algorithmic approach can be used rather than using machine learning. here we are using machine learning along with edge detection to demonstrate its capability for accurately detection pixelated images (we will see its potential use and how it beats the earlier model in our last section).
+
+
+
+Metrics:
+
+Method1:
+
+{Prcession,Accuracy,Recall,F1}
+
+Speed: 242086 FPS 
+Model size: 5.844 MB
+
+Method2 :
+
+{Prcession,Accuracy,Recall,F1}
+
+Speed: 270567 FPS
+Model size: 5.844 MB
+
+
+
+
+
+
+
+Unexecpted Finding (Further analysis) Going beyond the problem statement:
+
+The above methods are enough to detect and fix pixelated image effectively and accurately but we can go an extra mile and try go ebeyond the problem statement for detecting mosiac blur image as well. And if we apply the same training method it was found that the 2nd model (which uses canny edge detection) peforms way better than the orignal model as shown in the following metrics.
+
+
+Proposed solution for fixing mosaic blur: pix2pix model with a mobilenet backbone architecture.
+
+
+This is just an unexpected finding/potential capability I came across while researching on this topic
 
