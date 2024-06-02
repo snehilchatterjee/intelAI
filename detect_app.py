@@ -50,7 +50,7 @@ def model1_inf(x):
     model = mobilenet_v3_small(weights='DEFAULT')
     model.classifier[3] = nn.Linear(in_features=1024, out_features=2, bias=True)
 
-    model.load_state_dict(torch.load('./method1(0.971)_.pt'))
+    model.load_state_dict(torch.load('./method1(0.668).pt'))
 
     model.eval()  # Set the model to evaluation mode
 
