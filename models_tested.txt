@@ -1,0 +1,9 @@
+Detection:
+
+MobileNetV3_small 				 - perfect 
+MobileNetV3_large				 - too big size
+MobileNetV3_small + canny edge detection 	 - perfect
+
+Correction:
+
+ArbSr: 
