@@ -6,4 +6,6 @@ MobileNetV3_small + canny edge detection 	 - perfect
 
 Correction:
 
-ArbSr: 
+ESPCN: perfect 
+EDSR: perfect but slow
+SwninIR: extremely good but slow
