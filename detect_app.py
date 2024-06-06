@@ -1,4 +1,3 @@
-import timm
 import torch
 import warnings
 import gradio as gr
