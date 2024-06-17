@@ -64,8 +64,6 @@ Bottom Row is target
 ![alt text](images/sr_closeup.png)
 
 
-**Note:** The image link points to a sample output showcasing the input, generated image, and target image for comparison.
-
 
 # Inference: Detection
 
