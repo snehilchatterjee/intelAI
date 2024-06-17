@@ -1,0 +1,10 @@
+gradio
+torch
+torchvision
+pillow
+numpy
+opencv-python
+scikit-learn
+matplotlib
+tqdm
+timm
