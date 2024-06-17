@@ -151,7 +151,7 @@ Example:
 ├──  detect_app.py       - Detection inference app.py file
 │
 │
-├──  detect_app.py       - Correction inference app.py file
+├──  correct_app.py       - Correction inference app.py file
 ```
 
 
