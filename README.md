@@ -28,15 +28,35 @@ pip install -r requirements.txt
 
 **Performance:**
 
-| Metric        | Div2K         | Flickr2K        |
-|---------------|----------------|-----------------|
-| Precision     | 0.9084967     | 0.944            |
-| Recall        | 0.9084967     | 0.9007633        |
-| F1 Score       | 0.9084967     | 0.921875         |
-| Accuracy      | 0.9046053     | 0.9300595        |
-| False Positives | 9.52%          | 4.58%           |
-| Speed         | 3489 FPS       | 3489 FPS                |
-| Model Size     | 5.844 MB       | 5.844 MB                |
+I didn't evaluate the basline model on the div2k dataset because in the validation set/test set of flickr 2k  it was already performing very poorly
+
+**Proposed Method:**
+
+| Metric           | Div2K         | Flickr2K       |
+|------------------|---------------|----------------|
+| Precision        | 0.9084967     | 0.944          |
+| Recall           | 0.9084967     | 0.9007633      |
+| F1 Score         | 0.9084967     | 0.921875       |
+| Accuracy         | 0.9046053     | 0.9300595      |
+| False Positives  | 9.52%         | 4.58%          |
+| Speed            | 3489 FPS      | 3489 FPS       |
+| Model Size       | 5.844 MB      | 5.844 MB       |
+
+**Baseline:**
+
+
+| Metric           | Baseline on Flickr2K  |
+|------------------|-----------------------|
+| Precision        | 0.5648                |
+| Recall           | 0.4326                |
+| F1 Score         | 0.4899                |
+| Accuracy         | 0.5556                |
+| False Positives  | 32.867%               |
+| Speed            | FPS: 3951             |
+| Model Size       | 5.844 MB              |
+
+
+
 
 ### Super Resolution with Modified SRGAN
 
@@ -49,8 +69,13 @@ This section describes a super-resolution approach using a modified SRGAN archit
 
 **Performance:**
 
-* PSNR: 0.27
-* Speed: 28 FPS (4x super-resolution to FHD (1920 x 1080) image)
+
+
+| Metric        | Proposed Method         | Bicubic (Baseline)      |
+|---------------|----------------|------------------|
+| PSNR          | 28.95 dB       | 27.23 dB         |
+| SSIM          | 0.7582         | 0.6684           |
+| LPIPS         | 0.3794         | 0.2878           |
 
 **Sample Output:**
 
@@ -131,7 +156,10 @@ Example:
 │    
 │
 │
-├──  test.ipynb  - Test notebook file for detection method 2 (proposed method)
+├──  test_detect.ipynb  - Test notebook file for detection method 2 (proposed method)
+|
+|
+├──  test_correct.ipynb  - Test notebook file for correction 
 |
 |
 ├──  time_calculation.py    - Time measurement notebook for the detection method and the correction method
