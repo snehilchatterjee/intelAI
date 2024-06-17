@@ -14,7 +14,6 @@ pip install -r requirements.txt
 -  [Inference: Correction](#inference-correction)
 -  [In detail](#in-detail)
 -  [Contributing](#contributing)
--  [Acknowledgments](#acknowledgments)
 
 # Results
 
@@ -149,20 +148,21 @@ Example:
 │  
 │
 │
-├── detect_app.py       - Detection inference app.py file
+├──  detect_app.py       - Detection inference app.py file
 │
 │
-├── detect_app.py       - Correction inference app.py file
+├──  detect_app.py       - Correction inference app.py file
 ```
 
 
 # Future Work
 
+Obtaining Mean opinion score and calculating other metrics for super resolution task
+
 # Contributing
 Any kind of enhancement or contribution is welcomed.
 
 
-# Acknowledgments
 
 
 
