@@ -35,7 +35,7 @@ pip install -r requirements.txt
 | F1 Score       | 0.9084967     | 0.921875         |
 | Accuracy      | 0.9046053     | 0.9300595        |
 | False Positives | 9.52%          | 4.58%           |
-| Speed         | 2244 FPS       | 2244 FPS                |
+| Speed         | 3489 FPS       | 3489 FPS                |
 | Model Size     | 5.844 MB       | 5.844 MB                |
 
 ### Super Resolution with Modified SRGAN
@@ -50,7 +50,7 @@ This section describes a super-resolution approach using a modified SRGAN archit
 **Performance:**
 
 * PSNR: 0.27
-* Speed: 20 FPS (4x super-resolution to FHD image)
+* Speed: 28 FPS (4x super-resolution to FHD (1920 x 1080) image)
 
 **Sample Output:**
 
