@@ -12,7 +12,7 @@ pip install -r requirements.txt
 -  [Results](#results)
 -  [Inference: Detection](#inference-detection)
 -  [Inference: Correction](#inference-correction)
--  [Solution Architecture](#solution-architecture)
+-  [In detail](#in-detail)
 -  [Contributing](#contributing)
 -  [Acknowledgments](#acknowledgments)
 
@@ -85,6 +85,11 @@ Open the link on any web browser and you will see the following interface:
 
 Select method and proceed with uploading an image for detecting if it is pixelated.
 
+
+**Method1: MobileNetV3_Small**
+
+**Method2 (Proposed method): MobileNetV3_Small + Canny Edge Detection**
+
 Example:
 
 ![alt text](./images/detect_method_select.png)
@@ -121,50 +126,33 @@ Example:
 
 # In Details
 ```
-├──  config
-│    └── defaults.py  - here's the default config file.
-│
-│
-├──  configs  
-│    └── train_mnist_softmax.yml  - here's the specific config file for specific model or dataset.
-│ 
-│
-├──  data  
-│    └── datasets  - here's the datasets folder that is responsible for all data handling.
-│    └── transforms  - here's the data preprocess folder that is responsible for all data augmentation.
-│    └── build.py  		   - here's the file to make dataloader.
-│    └── collate_batch.py   - here's the file that is responsible for merges a list of samples to form a mini-batch.
-│
-│
-├──  engine
-│   ├── trainer.py     - this file contains the train loops.
-│   └── inference.py   - this file contains the inference process.
-│
-│
-├── layers              - this folder contains any customed layers of your project.
-│   └── conv_layer.py
-│
-│
-├── modeling            - this folder contains any model of your project.
-│   └── example_model.py
-│
-│
-├── solver             - this folder contains optimizer of your project.
-│   └── build.py
-│   └── lr_scheduler.py
-│   
-│ 
-├──  tools                - here's the train/test model of your project.
-│    └── train_net.py  - here's an example of train model that is responsible for the whole pipeline.
+├──  detection_method 1 [Pixelated].ipynb  - Training notebook file for detection method 1 (baseline)
 │ 
 │ 
-└── utils
-│    ├── logger.py
-│    └── any_other_utils_you_need
 │ 
+├──  detection_method 2 [Pixelated].ipynb  - Training notebook file for detection method 2 (proposed method)
+│    
+│
+│
+├──  test.ipynb  - Test notebook file for detection method 2 (proposed method)
+|
+|
+├──  time_calculation.py    - Time measurement notebook for the detection method and the correction method
 │ 
-└── tests					- this foler contains unit test of your project.
-     ├── test_data_sampler.py
+│
+├──  experiment_detection  
+│    └── comparision_n  - Contains comparision between low_res and high_res image
+│    └── solo_n         - Contains low_res version of sample images
+│    
+│
+├──  images             - Contains readme.md images
+│  
+│
+│
+├── detect_app.py       - Detection inference app.py file
+│
+│
+├── detect_app.py       - Correction inference app.py file
 ```
 
 
