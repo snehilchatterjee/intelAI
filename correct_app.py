@@ -4,6 +4,7 @@ from torchvision import transforms
 from PIL import Image
 import numpy as np
 from torch import nn
+import cv2
 
 device='cuda' if torch.cuda.is_available() else 'cpu'
 print(f'Using: {device}')
@@ -120,7 +121,7 @@ transform = transforms.Compose([
 
 
 # Function to translate the image
-def translate_image(image):
+def translate_image(image, sharpen):
     print('Translating!')
     desired_width = 480
     
@@ -129,26 +130,45 @@ def translate_image(image):
 
     resized_image = image.resize((desired_width, desired_height))
     low_res = transform(resized_image)
-    low_res=low_res.unsqueeze(dim=0).to(device)
+    low_res = low_res.unsqueeze(dim=0).to(device)
     model.eval()
     with torch.no_grad():
-        sr=model(low_res)
+        sr = model(low_res)
         
     fake_imgs = numpify(sr)
     
-    sr_img = Image.fromarray((((fake_imgs[0]+1)/2) * 255).astype(np.uint8))
-    sr_img.save('super_resolved_image.png')
+    sr_img = Image.fromarray((((fake_imgs[0] + 1) / 2) * 255).astype(np.uint8))
     
-    return sr_img
+    if sharpen:
+        sr_img_cv = np.array(sr_img)
+        sr_img_cv = cv2.cvtColor(sr_img_cv, cv2.COLOR_RGB2BGR)
+        
+        kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
+        sharpened_sr_img_cv = cv2.filter2D(sr_img_cv, -1, kernel)
+        
+        sharpened_sr_img = Image.fromarray(cv2.cvtColor(sharpened_sr_img_cv, cv2.COLOR_BGR2RGB))
+        
+        sharpened_sr_img.save('super_resolved_image.png')
+        
+        return sharpened_sr_img
+    else:
+        
+        sr_img.save('super_resolved_image.png')
+        
+        return sr_img
 
 # Set up the Gradio interface
 interface = gr.Interface(
     fn=translate_image,
-    inputs=gr.Image(type="pil"),
+    inputs=[
+        gr.Image(type="pil"),
+        gr.Checkbox(label="Sharpen Image")
+    ],
     outputs=gr.Image(type="pil", label="Translated Image"),
     title="Correction App",
-    description="Upload an image and get the translated version.",
+    description="Upload an image and get the translated version. Some images may be blurry, you can tick the checkbox to sharpen them.",
     allow_flagging=None
 )
+
 # Launch the Gradio app
 interface.launch()
