@@ -72,6 +72,7 @@ This section describes a super-resolution approach using a modified SRGAN archit
 | SSIM          | 0.7582                  | 0.6684                  |
 | LPIPS         | 0.3794                  | 0.2878                  |
 | Speed         | 28 FPS                  | -                       |
+| Model Size    | 0.482 MB                | -                       |
 
 **Sample Output:**
 
