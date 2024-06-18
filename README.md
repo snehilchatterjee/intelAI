@@ -145,7 +145,10 @@ Example:
 ├── test_correct.ipynb  - Test notebook file for correction 
 │
 │
-├── time_calculation.py  - Time measurement notebook for the detection method and the correction method
+├── time_calculation.ipynb  - Time measurement notebook for the detection method and the correction method
+│ 
+|
+├── model_size.ipynb  - Model size measurement notebook for the detection method and the correction method
 │ 
 │
 ├── experiment_detection  
