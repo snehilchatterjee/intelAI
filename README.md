@@ -2,19 +2,15 @@
 
 This project tackles the challenge of **detecting and enhancing** pixelated images at exceptional speeds.
 
-## Requirements
-
-Install the necessary libraries:
-```sh
-pip install -r requirements.txt
-```
-
-## Table Of Contents
+## Table of Contents
 - [Results](#results)
+- [Requirements](#requirements)
 - [Inference: Detection](#inference-detection)
 - [Inference: Correction](#inference-correction)
 - [In Detail](#in-detail)
+- [Future Work](#future-work)
 - [Contributing](#contributing)
+
 
 ## Results
 
@@ -29,7 +25,7 @@ pip install -r requirements.txt
 
 **Performance:**
 
-I didn't evaluate the baseline model on the Div2K dataset because it was already performing very poorly in the validation set/test set of Flickr2K.
+The baseline model was not evaluated on the Div2K dataset due to its poor performance on the Flickr2K validation/test set.
 
 **Proposed Method:**
 
@@ -87,13 +83,18 @@ This section describes a super-resolution approach using a modified SRGAN archit
   <img src="images/Labeled_Cropped/GroundTruth.png" width="400" />
 </p>
 
-
 ***2) Top Row: Input, Middle Row: Output, Bottom Row: Target***
 
 ![Super Resolution Result](images/sr_result.png)
 Close up:
 ![Close-up Super Resolution Result](images/sr_closeup.png)
 
+## Requirements
+
+Install the necessary libraries:
+```sh
+pip install -r requirements.txt
+```
 
 ## Inference: Detection
 
@@ -147,40 +148,39 @@ Example:
 ```
 ├── detection_method 1 [Pixelated].ipynb  - Training notebook file for detection method 1 (baseline)
 │ 
-│ 
-│ 
+|
 ├── detection_method 2 [Pixelated].ipynb  - Training notebook file for detection method 2 (proposed method)
-│    
-│
+│ 
+|   
 ├── Training_Correction.ipynb  - Training notebook file for correction method (proposed method)
-│    
 │
-├── Testing_Correction_Result.ipynb  - notebook file used to obtain images/sr_result.png and images/sr_closeup.png
+|    
+├── Testing_Correction_Result.ipynb  - Notebook file used to obtain images/sr_result.png and images/sr_closeup.png
+│
 |
 ├── test_detect.ipynb  - Test notebook file for detection method 2 (proposed method)
 │
+|
+├── test_correct.ipynb  - Test notebook file for correction
 │
-├── test_correct.ipynb  - Test notebook file for correction 
-│
-│
+|
 ├── time_calculation.ipynb  - Time measurement notebook for the detection method and the correction method
 │ 
 |
 ├── model_size.ipynb  - Model size measurement notebook for the detection method and the correction method
-│ 
 │
+| 
 ├── experiment_detection  
-│   └── comparision_n  - Contains comparison between low_res and high_res image
-│   └── solo_n         - Contains low_res version of sample images
-│   
-│
-├── images             - Contains readme.md images
+│   └── comparison_n  - Contains comparison between low_res and high_res image
+│   └── solo_n        - Contains low_res version of sample images
 │  
-│
-│
+| 
+├── images             - Contains readme.md images
+│ 
+| 
 ├── detect_app.py       - Detection inference app.py file
 │
-│
+|
 ├── correct_app.py       - Correction inference app.py file
 ```
 
