@@ -84,6 +84,7 @@ This section describes a super-resolution approach using a modified SRGAN archit
   <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_FSRCNN.png" width="400" />
   <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_EDSR.png" width="400" />
   <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_RealESRGAN.png" width="400" />
+  <img src="images/Labeled_Cropped/GroundTruth.png" width="400" />
 </p>
 
 
