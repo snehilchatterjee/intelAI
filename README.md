@@ -8,7 +8,7 @@ The models are hosted on HuggingFace :hugs:, but please note that their speed mi
 
 **Detection Model:** [IntelAI Detection](https://huggingface.co/spaces/snehilchatterjee/intelAI_detection)
 
-**Correction Model:** [IntelAI Correct](https://huggingface.co/spaces/snehilchatterjee/intelAIcorrect)
+**Correction Model:** [IntelAI Correction](https://huggingface.co/spaces/snehilchatterjee/intelAIcorrect)
 
 ## :stop_sign: IMPORTANT!!!!!!!
 
