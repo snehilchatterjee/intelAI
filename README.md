@@ -79,15 +79,15 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 **Performance:**
 Sure, here's the comparison in Markdown format:
 
-### Comparison of Image Super-Resolution Methods
+### Comparison of Image Super-Resolution Methods (Evaluated on Sample2.jpeg)
 
-| Metric        | Bicubic (Baseline)      | Proposed Method         | RealESRGAN               | FSRCNN                   | EDSR                     |
-|---------------|-------------------------|-------------------------|--------------------------|--------------------------|--------------------------|
-| PSNR          | 27.23 dB                | 28.95 dB                | 27.21 dB                 | 29.09 dB                 | 29.19 dB                 |
-| SSIM          | 0.6684                  | 0.7582                  | 0.7359                   | 0.7604                   | 0.7657                   |
-| LPIPS         | 0.2878                  | 0.3794                  | 0.4633                   | 0.5985                   | 0.6461                   |
-| Speed         | -                       | 28 FPS                  | -                        | -                        | -                        |
-| Model Size    | -                       | 0.482 MB                | -                        | -                        | -                        |
+| Metric        | Bicubic (Baseline)      | Proposed Method (MobileSR) | RealESRGAN               | FSRCNN                   | EDSR                     |
+|---------------|-------------------------|----------------------------|--------------------------|--------------------------|--------------------------|
+| PSNR          | 27.23 dB                | 28.95 dB                   | 27.21 dB                 | 29.09 dB                 | 29.19 dB                 |
+| SSIM          | 0.6684                  | 0.7582                     | 0.7359                   | 0.7604                   | 0.7657                   |
+| LPIPS         | 0.2878                  | 0.3794                     | 0.4633                   | 0.5985                   | 0.6461                   |
+| Speed         | -                       | 28 FPS                     | -                        | -                        | -                        |
+| Model Size    | -                       | 0.482 MB                   | -                        | -                        | -                        |
 
 
 **Sample Output:**
