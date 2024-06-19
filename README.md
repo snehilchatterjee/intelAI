@@ -2,6 +2,16 @@
 
 This project tackles the challenge of **detecting and enhancing** pixelated images at exceptional speeds.
 
+## :fire: Try it yourself :fire:
+
+Detection: https://huggingface.co/spaces/snehilchatterjee/intelAI_detection
+
+Correction: https://huggingface.co/spaces/snehilchatterjee/intelAIcorrect
+
+## IMPORTANT!!!!!!!
+
+When running **locally** please make sure you only use the version of libaraies mentioned in requirements.txt otherwise I have seen that in different version the results are vastly different and inccorect.
+
 ## Table of Contents
 - [Results](#results)
 - [Requirements](#requirements)
