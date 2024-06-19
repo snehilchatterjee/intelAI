@@ -19,7 +19,7 @@ This project tackles the challenge of **detecting and enhancing** pixelated imag
 
 ###  <ins>Detection Results: </ins>
 
-### MobileNet_v3_small + Canny Edges
+### MobileNet_v3_small + Canny Edge Detection
 
 **Datasets used for testing:**
 
