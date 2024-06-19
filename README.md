@@ -5,6 +5,7 @@ This project tackles the challenge of **detecting and enhancing** pixelated imag
 ## Table of Contents
 - [Results](#results)
 - [Requirements](#requirements)
+- [Training and Testing Details](#training-and-testing-details)
 - [Inference: Detection](#inference-detection)
 - [Inference: Correction](#inference-correction)
 - [In Detail](#in-detail)
@@ -110,6 +111,23 @@ Install the necessary libraries:
 ```sh
 pip install -r requirements.txt
 ```
+
+## Training and Testing Details
+
+#### Detector Training
+The detector was trained on the train split of the Flickr2K dataset, which consists of 2,200 images.
+
+#### Detector Testing
+The detector was tested in two phases:
+1. Test split of the Flickr2K dataset, consisting of 284 images.
+2. The full dataset of Div2K (train + val) to ensure the images were entirely independent of the trained dataset.
+
+#### Super Resolution Model Training
+The super resolution model was trained on a subset of the [COCO dataset](https://cocodataset.org/), using a total of 21,837 images.
+
+#### Super Resolution Model Testing
+The testing of the super resolution model was conducted using 166 randomly picked images from the Flickr2K dataset.
+
 
 ## Inference: Detection
 
