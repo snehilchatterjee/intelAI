@@ -30,10 +30,6 @@ This project tackles the challenge of **detecting and enhancing** pixelated imag
 
 The baseline model was not evaluated on the Div2K dataset due to its poor performance on the Flickr2K validation/test set.
 
-**Proposed Method:**
-
-Here's a comprehensive comparison between the proposed method and the baseline method, evaluated on the Div2K and Flickr2K datasets:
-
 ### Comparison of Proposed Method vs Baseline
 
 
@@ -77,7 +73,7 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 - Bilinear upsampling for improved performance in the final stage.
 
 **Performance:**
-Sure, here's the comparison in Markdown format:
+
 
 ### Comparison of Image Super-Resolution Methods (Evaluated on Sample2.jpeg)
 
