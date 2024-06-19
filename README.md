@@ -16,6 +16,8 @@ This project tackles the challenge of **detecting and enhancing** pixelated imag
 
 **The performance of these models was tested on RTX 3060 Mobile GPU.**
 
+###  <ins>Detection Results: </ins>
+
 ### MobileNet_v3_small + Canny Edges
 
 **Datasets used for testing:**
@@ -29,31 +31,44 @@ The baseline model was not evaluated on the Div2K dataset due to its poor perfor
 
 **Proposed Method:**
 
-| Metric           | Div2K         | Flickr2K       |
-|------------------|---------------|----------------|
-| Precision        | 0.9084967     | 0.944          |
-| Recall           | 0.9084967     | 0.9007633      |
-| F1 Score         | 0.9084967     | 0.921875       |
-| Accuracy         | 0.9046053     | 0.9300595      |
-| False Positives  | 9.52%         | 4.58%          |
-| Speed            | 3489 FPS      | 3489 FPS       |
-| Model Size       | 5.844 MB      | 5.844 MB       |
+Here's a comprehensive comparison between the proposed method and the baseline method, evaluated on the Div2K and Flickr2K datasets:
 
-**Baseline:**
+### Comparison of Proposed Method vs Baseline
 
-| Metric           | Baseline on Flickr2K  |
-|------------------|-----------------------|
-| Precision        | 0.5648                |
-| Recall           | 0.4326                |
-| F1 Score         | 0.4899                |
-| Accuracy         | 0.5556                |
-| False Positives  | 32.867%               |
-| Speed            | 3951 FPS              |
-| Model Size       | 5.844 MB              |
 
-### Super Resolution with Modified SRGAN
+#### Metrics on Flickr2K's test set
 
-This section describes a super-resolution approach using a modified SRGAN architecture.
+| Metric           | Proposed Method on Flickr2K | Baseline on Flickr2K  |
+|------------------|-----------------------------|-----------------------|
+| **Precision**    | 0.944                       | 0.5648                |
+| **Recall**       | 0.9007633                   | 0.4326                |
+| **F1 Score**     | 0.921875                    | 0.4899                |
+| **Accuracy**     | 0.9300595                   | 0.5556                |
+| **False Positives** | 4.58%                    | 32.867%               |
+| **Speed**        | 3489 FPS                    | 3951 FPS              |
+| **Model Size**   | 5.844 MB                    | 5.844 MB              |
+
+#### Metrics on Div2K
+
+| Metric           | Proposed Method on Div2K |
+|------------------|--------------------------|
+| **Precision**    | 0.9084967                |
+| **Recall**       | 0.9084967                |
+| **F1 Score**     | 0.9084967                |
+| **Accuracy**     | 0.9046053                |
+| **False Positives** | 9.52%                 |
+| **Speed**        | 3489 FPS                 |
+| **Model Size**   | 5.844 MB                 |
+
+### Summary
+
+The proposed method outperforms the baseline significantly across all evaluation metrics on the Flickr2K dataset. It achieves higher precision, recall, F1 score, and accuracy, while maintaining a much lower false positive rate. Although the proposed method has a slightly slower speed (3489 FPS vs. 3951 FPS), it is still extremely efficient and the trade-off is justified by the substantial improvements in other metrics. The model size remains consistent across both methods. 
+
+Overall, the proposed method demonstrates superior performance and is a clear improvement over the baseline, especially in terms of accuracy and reliability.
+
+###  <ins>Correction Results: </ins>
+
+### Super Resolution with MobileSR
 
 **Method:**
 
