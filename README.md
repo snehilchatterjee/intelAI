@@ -4,13 +4,15 @@ This project tackles the challenge of **detecting and enhancing** pixelated imag
 
 ## :fire: Try it yourself :fire:
 
-Detection: https://huggingface.co/spaces/snehilchatterjee/intelAI_detection
+The models are hosted on HuggingFace :hugs:, but please note that their speed might not be optimal since they are running on CPUs (free tier).
 
-Correction: https://huggingface.co/spaces/snehilchatterjee/intelAIcorrect
+**Detection Model:** [IntelAI Detection](https://huggingface.co/spaces/snehilchatterjee/intelAI_detection)
+
+**Correction Model:** [IntelAI Correct](https://huggingface.co/spaces/snehilchatterjee/intelAIcorrect)
 
 ## IMPORTANT!!!!!!!
 
-When running **locally** please make sure you only use the version of libaraies mentioned in requirements.txt otherwise I have seen that in different version the results are vastly different and inccorect.
+When running **locally**, ensure you use only the versions of libraries mentioned in `requirements.txt`. I've observed significant and incorrect differences in results when using different versions.
 
 ## Table of Contents
 - [Results](#results)
