@@ -79,6 +79,7 @@ This section describes a super-resolution approach using a modified SRGAN archit
 Top Row: Input, Middle Row: Output, Bottom Row: Target
 
 ![Super Resolution Result](images/sr_result.png)
+**Close up:**
 ![Close-up Super Resolution Result](images/sr_closeup.png)
 
 ## Inference: Detection
@@ -138,7 +139,11 @@ Example:
 ├── detection_method 2 [Pixelated].ipynb  - Training notebook file for detection method 2 (proposed method)
 │    
 │
+├── Training_Correction.ipynb  - Training notebook file for correction method (proposed method)
+│    
 │
+├── Testing_Correction_Result.ipynb  - notebook file used to obtain images/sr_result.png and images/sr_closeup.png
+|
 ├── test_detect.ipynb  - Test notebook file for detection method 2 (proposed method)
 │
 │
