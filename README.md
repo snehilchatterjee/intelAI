@@ -77,14 +77,27 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 - Bilinear upsampling for improved performance in the final stage.
 
 **Performance:**
+Sure, here's the comparison in Markdown format:
 
-| Metric        | Proposed Method         | Bicubic (Baseline)      |
-|---------------|-------------------------|-------------------------|
-| PSNR          | 28.95 dB                | 27.23 dB                |
-| SSIM          | 0.7582                  | 0.6684                  |
-| LPIPS         | 0.3794                  | 0.2878                  |
-| Speed         | 28 FPS                  | -                       |
-| Model Size    | 0.482 MB                | -                       |
+### Comparison of Image Super-Resolution Methods
+
+| Metric        | Bicubic (Baseline)      | Proposed Method         | RealESRGAN               | FSRCNN                   | EDSR                     |
+|---------------|-------------------------|-------------------------|--------------------------|--------------------------|--------------------------|
+| PSNR          | 27.23 dB                | 28.95 dB                | 27.21 dB                 | 29.09 dB                 | 29.19 dB                 |
+| SSIM          | 0.6684                  | 0.7582                  | 0.7359                   | 0.7604                   | 0.7657                   |
+| LPIPS         | 0.2878                  | 0.3794                  | 0.4633                   | 0.5985                   | 0.6461                   |
+| Speed         | -                       | 28 FPS                  | -                        | -                        | -                        |
+| Model Size    | -                       | 0.482 MB                | -                        | -                        | -                        |
+
+### Analysis
+
+- **PSNR:** The proposed method shows improvement over Bicubic but slightly lower compared to FSRCNN and EDSR.
+- **SSIM:** The proposed method improves significantly over Bicubic and approaches the SSIM of FSRCNN and EDSR.
+- **LPIPS:** The proposed method has a higher LPIPS score compared to FSRCNN and EDSR, indicating potentially better perceptual quality.
+- **Speed:** The proposed method operates at 28 FPS, indicating good real-time performance.
+- **Model Size:** The proposed method has a compact model size of 0.482 MB, indicating efficient resource utilization.
+
+In conclusion, the choice of the best super-resolution method depends on specific priorities such as PSNR, SSIM, perceptual quality (LPIPS), speed, and model size requirements. Each method has its strengths, and the selection should align with the desired balance of these metrics for the particular application.
 
 **Sample Output:**
 
