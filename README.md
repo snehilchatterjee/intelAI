@@ -89,15 +89,6 @@ Sure, here's the comparison in Markdown format:
 | Speed         | -                       | 28 FPS                  | -                        | -                        | -                        |
 | Model Size    | -                       | 0.482 MB                | -                        | -                        | -                        |
 
-### Analysis
-
-- **PSNR:** The proposed method shows improvement over Bicubic but slightly lower compared to FSRCNN and EDSR.
-- **SSIM:** The proposed method improves significantly over Bicubic and approaches the SSIM of FSRCNN and EDSR.
-- **LPIPS:** The proposed method has a higher LPIPS score compared to FSRCNN and EDSR, indicating potentially better perceptual quality.
-- **Speed:** The proposed method operates at 28 FPS, indicating good real-time performance.
-- **Model Size:** The proposed method has a compact model size of 0.482 MB, indicating efficient resource utilization.
-
-In conclusion, the choice of the best super-resolution method depends on specific priorities such as PSNR, SSIM, perceptual quality (LPIPS), speed, and model size requirements. Each method has its strengths, and the selection should align with the desired balance of these metrics for the particular application.
 
 **Sample Output:**
 
