@@ -2,7 +2,7 @@
 
 This project tackles the challenge of **detecting and enhancing** pixelated images at exceptional speeds.
 
-## :fire: Try it yourself :fire:
+## :fire: Try it yourself!!!! :fire:
 
 The models are hosted on HuggingFace :hugs:, but please note that their speed might not be optimal since they are running on CPUs (free tier).
 
@@ -10,11 +10,11 @@ The models are hosted on HuggingFace :hugs:, but please note that their speed mi
 
 **Correction Model:** [IntelAI Correct](https://huggingface.co/spaces/snehilchatterjee/intelAIcorrect)
 
-## IMPORTANT!!!!!!!
+## :stop_sign: IMPORTANT!!!!!!!
 
 When running **locally**, ensure you use only the versions of libraries mentioned in `requirements.txt`. I've observed significant and incorrect differences in results when using different versions.
 
-## Table of Contents
+## :bookmark_tabs: Table of Contents
 - [Results](#results)
 - [Requirements](#requirements)
 - [Training and Testing Details](#training-and-testing-details)
@@ -25,7 +25,7 @@ When running **locally**, ensure you use only the versions of libraries mentione
 - [Contributing](#contributing)
 
 
-## Results
+## :star: Results
 
 **The performance of these models was tested on RTX 3060 Mobile GPU.**
 
