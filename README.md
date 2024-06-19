@@ -79,11 +79,11 @@ This section describes a super-resolution approach using a modified SRGAN archit
 ***1) (480 x 320) -----> (1920 x 1280)***
 
 <p float="left">
-  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_Input.png" width="350" />
-  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_MobileSR.png" width="350" />
-  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_FSRCNN.png" width="350" />
-  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_EDSR.png" width="350" />
-  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_RealESRGAN.png" width="350" />
+  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_Input.png" width="380" />
+  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_MobileSR.png" width="380" />
+  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_FSRCNN.png" width="380" />
+  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_EDSR.png" width="380" />
+  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_RealESRGAN.png" width="380" />
 </p>
 
 
