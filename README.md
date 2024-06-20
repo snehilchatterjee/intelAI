@@ -62,11 +62,11 @@ The baseline model was not evaluated on the Div2K dataset due to its poor perfor
 <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
     <div style="margin: 0 10px;">
         <h3 style="text-align: center;">Proposed Method</h3>
-        <img src="images/cf_detection_method2.png" alt="Proposed Method">
+        <img src="images/cf_detection_method2.png" alt="Proposed Method", width=400>
     </div>
     <div style="margin: 0 10px;">
         <h3 style="text-align: center;">Baseline</h3>
-        <img src="images/cf_detection_method1.png" alt="Baseline">
+        <img src="images/cf_detection_method1.png" alt="Baseline", wdith=400>
     </div>
 </div>
 
