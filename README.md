@@ -61,9 +61,9 @@ The baseline model was not evaluated on the Div2K dataset due to its poor perfor
 
 
 <p float="left">
-   <h3>Proposed Method</h3>
+   <h3>Proposed Method:</h3>
   <img src="images/cf_detection_method2.png" width="800" />
-  <h3>Baseline</h3>
+  <h3>Baseline:</h3>
   <img src="images/cf_detection_method1.png" width="800" />
 </p>
 
