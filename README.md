@@ -96,7 +96,15 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 | LPIPS             | 0.2878                  | 0.3794                     | 0.4633                   | 0.5985                   | 0.6461                   |
 | Speed             | -                       | 28 FPS                     | <1 FPS                   | 188 FPS                  | 16 FPS                   |
 | Model Size        | -                       | 0.482 MB                   | 63.698 MB                | 0.049 MB                 | 5.789 MB                 |
-| Mean Opinon Score | 3.56                    | 4.11                       | 4.39                     | 3.56                     | 3.39
+| Mean Opinon Score | 3.19                    | 4.00                       | 4.31                     | 3.06                     | 3.39                     |
+
+
+Total opinions taken: 16
+
+Mean Opinon Score Plot:
+
+![MOS](images/mean_ratings_plot_beautiful.png)
+
 
 ## Summary:
 
