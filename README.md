@@ -59,14 +59,11 @@ The baseline model was not evaluated on the Div2K dataset due to its poor perfor
 
 ### Confusion Matrices:
 
-<div style="display: flex; justify-content: center; align-items: center; text-align: center;">
-    <div style="margin: 0 10px;">
-        <img src="images/cf_detection_method2.png" alt="Proposed Method", width=400>
-    </div>
-    <div style="margin: 0 10px;">
-        <img src="images/cf_detection_method1.png" alt="Baseline", width=400>
-    </div>
-</div>
+
+<p float="left">
+  <img src="images/cf_detection_method2.png" width="400" />
+  <img src="images/cf_detection_method1.png" width="400" />
+</p>
 
 
 #### Metrics on Div2K
