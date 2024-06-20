@@ -57,9 +57,10 @@ The baseline model was not evaluated on the Div2K dataset due to its poor perfor
 | **Speed**        | 3489 FPS                    | 3951 FPS              |
 | **Model Size**   | 5.844 MB                    | 5.844 MB              |
 
-### Graph Plots:
+### Confusion Matrices:
 
-![comparision_plots](images/comparison_metrics_detection.png)
+![cf_method2](images/cf_detection_method2.png)
+![cf_method1](images/cf_detection_method1.png)
 
 #### Metrics on Div2K
 
@@ -72,6 +73,10 @@ The baseline model was not evaluated on the Div2K dataset due to its poor perfor
 | **False Positives** | 9.52%                 |
 | **Speed**        | 3489 FPS                 |
 | **Model Size**   | 5.844 MB                 |
+
+### Confusion Matrix:
+
+![cf_method2_test](images/cf_detection_method2_test.png)
 
 ### Summary
 
@@ -100,12 +105,12 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 | LPIPS             | 0.2878                  | 0.3794                     | 0.4633                   | 0.5985                   | 0.6461                   |
 | Speed             | -                       | 28 FPS                     | <1 FPS                   | 188 FPS                  | 16 FPS                   |
 | Model Size        | -                       | 0.482 MB                   | 63.698 MB                | 0.049 MB                 | 5.789 MB                 |
-| Mean Opinon Score | 3.19                    | 4.00                       | 4.31                     | 3.06                     | 3.39                     |
+| Mean Opinion Score | 3.19                    | 4.00                       | 4.31                     | 3.06                     | 3.39                     |
 
 
 Total opinions taken: 16
 
-Mean Opinon Score Plot:
+Mean Opinion Score Plot:
 
 ![MOS](images/mean_ratings_plot_beautiful.png)
 
