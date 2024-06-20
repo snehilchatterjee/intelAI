@@ -57,6 +57,10 @@ The baseline model was not evaluated on the Div2K dataset due to its poor perfor
 | **Speed**        | 3489 FPS                    | 3951 FPS              |
 | **Model Size**   | 5.844 MB                    | 5.844 MB              |
 
+### Graph Plots:
+
+![comparision_plots](images/comparison_metrics_detection.png)
+
 #### Metrics on Div2K
 
 | Metric           | Proposed Method on Div2K |
