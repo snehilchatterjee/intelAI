@@ -120,30 +120,9 @@ Mean Opinion Score Plot:
 
 ![MOS](images/mean_ratings_plot_beautiful.png)
 
+Mean Opinion Score Results: [Results](https://docs.google.com/spreadsheets/d/1gVwDEkZqQh_vei8I5QgR4UZ0rX_byFTNz3BPfMHUns8/edit?usp=sharing)
 
 ## Summary:
-
-1. **RealESRGAN**:
-   - **Visual Quality**: RealESRGAN produces the best visual quality among the models evaluated.
-   - **Artifacts**: However, it introduces artificial looks in the results, which may not be desirable depending on the application.
-   - **Quantitative Metrics**: RealESRGAN shows lower LPIPS and slightly lower PSNR compared to the proposed method (MobileSR), indicating a slightly lower fidelity in terms of perceptual and peak signal-to-noise ratio metrics.
-   - **Practical Considerations**: RealESRGAN has a very large model size (63.698 MB), which makes it unsuitable for deployment on resource-constrained devices like embedded systems.
-
-2. **FSRCNN**:
-   - **Visual Quality**: FSRCNN generally produces the worst visual quality among the models evaluated, sometimes even worse than the input.
-   - **Speed**: It is the fastest model, operating at 188 FPS, making it highly suitable for real-time applications.
-   - **Model Size**: FSRCNN has the smallest model size (0.049 MB), which is ideal for embedded systems with limited storage and computational resources.
-
-3. **EDSR**:
-   - **Visual Quality**: EDSR does not perform well in terms of visual quality, falling short compared to other models like RealESRGAN and the proposed method (MobileSR).
-   - **Speed**: It operates at 16 FPS, which is slower than the requirement of 20 FPS, potentially limiting its suitability for real-time applications.
-   - **Model Size**: EDSR has a moderate model size of 5.789 MB, which is larger than FSRCNN but smaller than RealESRGAN.
-
-4. **Proposed Method (MobileSR)**:
-   - **Visual Quality**: MobileSR is just behind RealESRGAN in visual quality, but without noticeable artificial looks.
-   - **Quantitative Metrics**: It performs well in both PSNR and LPIPS metrics, surpassing RealESRGAN in PSNR and having a lower LPIPS score than RealESRGAN.
-   - **Practical Considerations**: MobileSR has an optimal model size of 0.482 MB, making it suitable for deployment on embedded systems.
-   - **Speed**: It operates at 28 FPS, meeting the requirement for real-time performance.
 
 In summary, RealESRGAN excels in visual quality but suffers from artificial looks and impractically large model size. FSRCNN is extremely fast with a tiny model size but sacrifices visual quality. EDSR falls short in visual quality and speed requirements. The proposed method (MobileSR) strikes a balance by offering good visual quality close to RealESRGAN, with no artificial looks, optimal model size for embedded systems, and sufficient speed for real-time applications, making it a strong candidate for practical implementations where a blend of performance and efficiency is crucial.
 
