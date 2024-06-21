@@ -150,6 +150,10 @@ Close up:
 
 ## Architecture
 
+### Detector Architecture:
+
+![detector](images/detector_architecture_white.jpeg)
+
 ### MobileSR Architecture:
 
 ![mobilesr](images/generator_architecture_white.jpeg)
