@@ -16,6 +16,7 @@ When running **locally**, ensure you use only the versions of libraries mentione
 
 ## :bookmark_tabs: Table of Contents
 - [Results](#results)
+- [Model Architecture](#architecture)
 - [Requirements](#requirements)
 - [Training and Testing Details](#training-and-testing-details)
 - [Inference: Detection](#inference-detection)
@@ -145,6 +146,14 @@ In summary, RealESRGAN excels in visual quality but suffers from artificial look
 ![Super Resolution Result](images/sr_result.png)
 Close up:
 ![Close-up Super Resolution Result](images/sr_closeup.png)
+
+
+## Architecture
+
+### MobileSR Architecture:
+
+![mobilesr](images/generator_architecture_white.jpeg)
+
 
 ## Requirements
 
