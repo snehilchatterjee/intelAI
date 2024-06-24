@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img src="images/logo.gif" alt="Logo" style="border-radius: 15%;">
+    <img src="images/logo.gif" alt="Logo">
 </p>
 
 
@@ -13,8 +13,8 @@ For image correction, the project introduces **MobileSR**, a super resolution mo
 Both models were implemented entirely from scratch and are hosted on HuggingFace for accessibility, although optimal performance is observed with GPU-based execution. The project's success underscores the potential for practical deployment in real-time applications where rapid image enhancement and high fidelity are paramount. 🔧🎉
 
 <p align="center">
-    <img src="images/sr_closeup_transition.gif" alt="Logo" style="border-radius: 5px;">
-</p>
+    <img src="images/sr_closeup_transition.gif">
+    </p>
 
 
 ## :fire: Try it yourself!!!! :fire:
