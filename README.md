@@ -1,18 +1,15 @@
 # DeepClarity
 
 
-<div style="text-align: center;">
+<p align="center">
     <img src="images/logo.gif" alt="Logo">
-</div>
-
+</p>
 
 This project tackles the challenge of **detecting and enhancing** pixelated images at exceptional speeds.
 
-
-<div style="text-align: center;">
-    <img src="images/sr_closeup_transition.gif"  alt="Logo">
-</div>
-
+<p align="center">
+    <img src="images/sr_closeup_transition.gif" alt="Logo">
+</p>
 
 ## :fire: Try it yourself!!!! :fire:
 
