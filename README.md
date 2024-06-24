@@ -2,7 +2,7 @@
 
 
 <p align="center">
-    <img src="images/logo.gif" alt="Logo" style="border-radius: 35px;">
+    <img src="images/logo.gif" alt="Logo" style="border-radius: 15%;">
 </p>
 
 
