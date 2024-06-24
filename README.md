@@ -1,15 +1,21 @@
-# DeepClarity
+# DeepClarity 🔍
 
 
 <p align="center">
-    <img src="images/logo.gif" alt="Logo">
+    <img src="images/logo.gif" alt="Logo" style="border-radius: 35px;">
 </p>
 
-This project tackles the challenge of **detecting and enhancing** pixelated images at exceptional speeds.
+
+**🚀 DeepClarity** introduces novel models designed from scratch to address the dual challenges of **detecting and enhancing pixelated** images with **exceptional speeds**. The proposed detection model, leveraging **MobileNet_v3_small used with Canny edge detection**, demonstrates significant improvements over baseline methods on datasets like **Div2K** and **Flickr2K**, achieving higher precision, recall, F1 score, and accuracy while maintaining a lower false positive rate. Despite a slightly reduced speed compared to the baseline, the model remains efficient, operating at **3489 FPS**. ⚡
+
+For image correction, the project introduces **MobileSR**, a super resolution model based on SRGAN with modified generator architecture, showcasing enhanced performance in terms of PSNR, SSIM, and LPIPS metrics compared to traditional methods like Bicubic and other deep learning approaches. MobileSR strikes a balance between visual quality and computational efficiency, operating at **28 FPS** with a compact model size of **0.482 MB**. 🖼️✨
+
+Both models were implemented entirely from scratch and are hosted on HuggingFace for accessibility, although optimal performance is observed with GPU-based execution. The project's success underscores the potential for practical deployment in real-time applications where rapid image enhancement and high fidelity are paramount. 🔧🎉
 
 <p align="center">
-    <img src="images/sr_closeup_transition.gif" alt="Logo">
+    <img src="images/sr_closeup_transition.gif" alt="Logo" style="border-radius: 5px;">
 </p>
+
 
 ## :fire: Try it yourself!!!! :fire:
 
