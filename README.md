@@ -10,8 +10,7 @@
 
 For image correction, the project introduces **MobileSR**, a super resolution model based on SRGAN with modified generator architecture, showcasing enhanced performance in terms of PSNR, SSIM, and LPIPS metrics compared to traditional methods like Bicubic and other deep learning approaches. MobileSR strikes a balance between visual quality and computational efficiency, operating at **28 FPS** with a compact model size of **0.482 MB**. 🖼️✨
 
-Both models were implemented entirely from scratch and are hosted on HuggingFace for accessibility, although optimal performance is observed with GPU-based execution. The project's success underscores the potential for practical deployment in real-time applications where rapid image enhancement and high fidelity are paramount. 🔧🎉
-
+Both models were implemented entirely from scratch and are hosted on HuggingFace for accessibility, although optimal performance is observed with GPU-based execution. 
 <p align="center">
     <img src="images/sr_closeup_transition.gif" width=300px>
     </p>
