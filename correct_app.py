@@ -5,6 +5,7 @@ from PIL import Image
 import numpy as np
 from torch import nn
 import cv2
+from super_image import EdsrModel, ImageLoader
 
 device='cuda' if torch.cuda.is_available() else 'cpu'
 print(f'Using: {device}')
@@ -104,9 +105,6 @@ def build_generator():
 
     return Generator(3, 6, 32)
 
-model=build_generator().to(device)
-model.load_state_dict(torch.load('./generator_weight.pt'))
-
 
 def numpify(imgs):
     all_images = []
@@ -121,24 +119,40 @@ transform = transforms.Compose([
 
 
 # Function to translate the image
-def translate_image(image, sharpen):
+def translate_image(image, sharpen, model_name, save):
     print('Translating!')
+
     desired_width = 480
     
     original_width, original_height = image.size
     desired_height = int((original_height / original_width) * desired_width)
 
     resized_image = image.resize((desired_width, desired_height))
-    low_res = transform(resized_image)
-    low_res = low_res.unsqueeze(dim=0).to(device)
-    model.eval()
-    with torch.no_grad():
-        sr = model(low_res)
+
+    if(model_name=='MobileSR'):
         
-    fake_imgs = numpify(sr)
-    
-    sr_img = Image.fromarray((((fake_imgs[0] + 1) / 2) * 255).astype(np.uint8))
-    
+        model=build_generator().to(device)
+        model.load_state_dict(torch.load('./generator_weight.pt'))
+
+        low_res = transform(resized_image)
+        low_res = low_res.unsqueeze(dim=0).to(device)
+        model.eval()
+        with torch.no_grad():
+            sr = model(low_res)
+            
+        fake_imgs = numpify(sr)
+        
+        sr_img = Image.fromarray((((fake_imgs[0] + 1) / 2) * 255).astype(np.uint8))
+
+    elif(model_name=='EDSR'):
+        model = EdsrModel.from_pretrained('eugenesiow/edsr-base', scale=4)    
+        inputs = ImageLoader.load_image(resized_image)
+        preds = model(inputs)
+
+        sr_img = preds.data.cpu().numpy()
+        sr_img = sr_img[0].transpose((1, 2, 0)) * 255.0
+        sr_img = Image.fromarray(sr_img.astype(np.uint8))
+            
     if sharpen:
         sr_img_cv = np.array(sr_img)
         sr_img_cv = cv2.cvtColor(sr_img_cv, cv2.COLOR_RGB2BGR)
@@ -147,26 +161,29 @@ def translate_image(image, sharpen):
         sharpened_sr_img_cv = cv2.filter2D(sr_img_cv, -1, kernel)
         
         sharpened_sr_img = Image.fromarray(cv2.cvtColor(sharpened_sr_img_cv, cv2.COLOR_BGR2RGB))
-        
-        sharpened_sr_img.save('super_resolved_image.png')
+
+        if(save=="True"):
+            sharpened_sr_img.save('super_resolved_image.png')
         
         return sharpened_sr_img
     else:
         
-        sr_img.save('super_resolved_image.png')
+        if(save=="True"):
+            sr_img.save('super_resolved_image.png')
         
         return sr_img
 
-# Set up the Gradio interface
 interface = gr.Interface(
     fn=translate_image,
     inputs=[
         gr.Image(type="pil"),
-        gr.Checkbox(label="Sharpen Image")
+        gr.Checkbox(label="Sharpen Image"),
+        gr.Radio(choices=["MobileSR", "EDSR", "MiniSRGAN"], label="Select Model"),
+        gr.Radio(choices=["True", "False"], label="Save Output")
     ],
     outputs=gr.Image(type="pil", label="Translated Image"),
     title="Correction App",
-    description="Upload an image and get the translated version. Some images may be blurry, you can tick the checkbox to sharpen them.",
+    description="Upload an image and get the translated version. Some images may be blurry, you can tick the checkbox to sharpen them. Choose between three different models for translation.(For close-up shots, MobileSR delivers superior performance, while EDSR excels in handling distant shots.)",
     allow_flagging=None
 )
 
