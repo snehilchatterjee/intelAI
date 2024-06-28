@@ -184,7 +184,7 @@ interface = gr.Interface(
     outputs=gr.Image(type="pil", label="Translated Image"),
     title="Correction App",
     description="Upload an image and get the translated version. Some images may be blurry, you can tick the checkbox to sharpen them. Choose between three different models for translation.(For close-up shots, MobileSR delivers superior performance, while EDSR excels in handling distant shots.)",
-    allow_flagging=None
+    allow_flagging='never' 
 )
 
 # Launch the Gradio app
