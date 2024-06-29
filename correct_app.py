@@ -10,6 +10,134 @@ from super_image import EdsrModel, ImageLoader
 device='cuda' if torch.cuda.is_available() else 'cpu'
 print(f'Using: {device}')
 
+class _conv(nn.Conv2d):
+    def __init__(self, in_channels, out_channels, kernel_size, stride, padding, bias):
+        super(_conv, self).__init__(in_channels = in_channels, out_channels = out_channels, 
+                               kernel_size = kernel_size, stride = stride, padding = (kernel_size) // 2, bias = True)
+        
+        self.weight.data = torch.normal(torch.zeros((out_channels, in_channels, kernel_size, kernel_size)), 0.02)
+        self.bias.data = torch.zeros((out_channels))
+        
+        for p in self.parameters():
+            p.requires_grad = True
+        
+
+class conv(nn.Module):
+    def __init__(self, in_channel, out_channel, kernel_size, BN = False, act = None, stride = 1, bias = True):
+        super(conv, self).__init__()
+        m = []
+        m.append(_conv(in_channels = in_channel, out_channels = out_channel, 
+                               kernel_size = kernel_size, stride = stride, padding = (kernel_size) // 2, bias = True))
+        
+        if BN:
+            m.append(nn.BatchNorm2d(num_features = out_channel))
+        
+        if act is not None:
+            m.append(act)
+        
+        self.body = nn.Sequential(*m)
+        
+    def forward(self, x):
+        out = self.body(x)
+        return out
+        
+class ResBlock(nn.Module):
+    def __init__(self, channels, kernel_size, act = nn.ReLU(inplace = True), bias = True):
+        super(ResBlock, self).__init__()
+        m = []
+        m.append(conv(channels, channels, kernel_size, BN = True, act = act))
+        m.append(conv(channels, channels, kernel_size, BN = True, act = None))
+        self.body = nn.Sequential(*m)
+        
+    def forward(self, x):
+        res = self.body(x)
+        res += x
+        return res
+    
+class BasicBlock(nn.Module):
+    def __init__(self, in_channels, out_channels, kernel_size, num_res_block, act = nn.ReLU(inplace = True)):
+        super(BasicBlock, self).__init__()
+        m = []
+        
+        self.conv = conv(in_channels, out_channels, kernel_size, BN = False, act = act)
+        for i in range(num_res_block):
+            m.append(ResBlock(out_channels, kernel_size, act))
+        
+        m.append(conv(out_channels, out_channels, kernel_size, BN = True, act = None))
+        
+        self.body = nn.Sequential(*m)
+        
+    def forward(self, x):
+        res = self.conv(x)
+        out = self.body(res)
+        out += res
+        
+        return out
+        
+class Upsampler(nn.Module):
+    def __init__(self, channel, kernel_size, scale, act = nn.ReLU(inplace = True)):
+        super(Upsampler, self).__init__()
+        m = []
+        m.append(conv(channel, channel * scale * scale, kernel_size))
+        m.append(nn.PixelShuffle(scale))
+    
+        if act is not None:
+            m.append(act)
+        
+        self.body = nn.Sequential(*m)
+    
+    def forward(self, x):
+        out = self.body(x)
+        return out
+
+class discrim_block(nn.Module):
+    def __init__(self, in_feats, out_feats, kernel_size, act = nn.LeakyReLU(inplace = True)):
+        super(discrim_block, self).__init__()
+        m = []
+        m.append(conv(in_feats, out_feats, kernel_size, BN = True, act = act))
+        m.append(conv(out_feats, out_feats, kernel_size, BN = True, act = act, stride = 2))
+        self.body = nn.Sequential(*m)
+        
+    def forward(self, x):
+        out = self.body(x)
+        return out
+
+class MiniSRGAN(nn.Module):
+    
+    def __init__(self, img_feat = 3, n_feats = 64, kernel_size = 3, num_block = 8, act = nn.PReLU(), scale=4):
+        super(MiniSRGAN, self).__init__()
+        
+        self.conv01 = conv(in_channel = img_feat, out_channel = n_feats, kernel_size = 9, BN = False, act = act)
+        
+        resblocks = [ResBlock(channels = n_feats, kernel_size = 3, act = act) for _ in range(num_block)]
+        self.body = nn.Sequential(*resblocks)
+        
+        self.conv02 = conv(in_channel = n_feats, out_channel = n_feats, kernel_size = 3, BN = True, act = None)
+        
+        if(scale == 4):
+            upsample_blocks = [Upsampler(channel = n_feats, kernel_size = 3, scale = 2, act = act) for _ in range(2)]
+        else:
+            upsample_blocks = [Upsampler(channel = n_feats, kernel_size = 3, scale = scale, act = act)]
+
+        self.tail = nn.Sequential(*upsample_blocks)
+        
+        self.last_conv = conv(in_channel = n_feats, out_channel = img_feat, kernel_size = 3, BN = False, act = nn.Tanh())
+        
+    def forward(self, x):
+        
+        x = self.conv01(x)
+        _skip_connection = x
+        
+        x = self.body(x)
+        x = self.conv02(x)
+        feat = x + _skip_connection
+        
+        x = self.tail(feat)
+        x = self.last_conv(x)
+        
+        return x, feat
+
+
 def build_generator():
     
     class ResidualBlock(nn.Module):
@@ -132,7 +260,7 @@ def translate_image(image, sharpen, model_name, save):
     if(model_name=='MobileSR'):
         
         model=build_generator().to(device)
-        model.load_state_dict(torch.load('.weights/MiniSRGAN.pth'))
+        model.load_state_dict(torch.load('./weights/mobile_sr.pt'))
 
         low_res = transform(resized_image)
         low_res = low_res.unsqueeze(dim=0).to(device)
@@ -147,12 +275,27 @@ def translate_image(image, sharpen, model_name, save):
     elif(model_name=='EDSR'):
         model = EdsrModel.from_pretrained('eugenesiow/edsr-base', scale=4)    
         inputs = ImageLoader.load_image(resized_image)
-        preds = model(inputs)
+        with torch.no_grad():
+            preds = model(inputs)
 
         sr_img = preds.data.cpu().numpy()
         sr_img = sr_img[0].transpose((1, 2, 0)) * 255.0
         sr_img = Image.fromarray(sr_img.astype(np.uint8))
-            
+    elif(model_name=='MiniSRGAN'):
+        model = MiniSRGAN().to(device)
+        model.load_state_dict(torch.load('./weights/miniSRGAN.pt'))
+        
+        inputs = np.array(resized_image)
+        inputs = (inputs / 127.5) - 1.0   
+        inputs = torch.tensor(inputs.transpose(2, 0, 1).astype(np.float32)).to(device)
+        
+        with torch.no_grad():
+            output, _ = model(torch.unsqueeze(inputs,dim=0))
+        output = output[0].cpu().numpy()
+        output = (output + 1.0) / 2.0
+        output = output.transpose(1, 2, 0)
+        sr_img = Image.fromarray((output * 255.0).astype(np.uint8))
+    
     if sharpen:
         sr_img_cv = np.array(sr_img)
         sr_img_cv = cv2.cvtColor(sr_img_cv, cv2.COLOR_RGB2BGR)

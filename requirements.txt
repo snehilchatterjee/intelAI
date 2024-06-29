@@ -1,4 +1,4 @@
-gradio
+gradio==4.32.2
 torch==2.1.0
 torchvision==0.16.0
 pillow==10.0.1
@@ -8,3 +8,5 @@ scikit-learn==1.3.2
 matplotlib==3.8.2
 tqdm==4.66.1
 timm==0.9.12
+super_image=0.1.7
+
