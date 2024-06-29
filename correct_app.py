@@ -292,6 +292,7 @@ def translate_image(image, sharpen, model_name, save):
         with torch.no_grad():
             output, _ = model(torch.unsqueeze(inputs,dim=0))
         output = output[0].cpu().numpy()
+        output = np.clip(output, -1.0, 1.0)
         output = (output + 1.0) / 2.0
         output = output.transpose(1, 2, 0)
         sr_img = Image.fromarray((output * 255.0).astype(np.uint8))
