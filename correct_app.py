@@ -132,7 +132,7 @@ def translate_image(image, sharpen, model_name, save):
     if(model_name=='MobileSR'):
         
         model=build_generator().to(device)
-        model.load_state_dict(torch.load('./generator_weight.pt'))
+        model.load_state_dict(torch.load('.weights/MiniSRGAN.pth'))
 
         low_res = transform(resized_image)
         low_res = low_res.unsqueeze(dim=0).to(device)

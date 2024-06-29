@@ -49,7 +49,7 @@ def model1_inf(x):
     model = mobilenet_v3_small(weights='DEFAULT')
     model.classifier[3] = nn.Linear(in_features=1024, out_features=2, bias=True)
 
-    model.load_state_dict(torch.load('./method1(0.668).pt'))
+    model.load_state_dict(torch.load('./weights/method1(0.668).pt'))
 
     model.eval()  # Set the model to evaluation mode
 
@@ -76,7 +76,7 @@ def model2_inf(x):
     image_np = image[0].permute(1, 2, 0).cpu().numpy()
     image_np = (image_np * 255).astype(np.uint8)  # Ensure the image is of type uint8
 
-    model.load_state_dict(torch.load('./method2(0.960).pt'))
+    model.load_state_dict(torch.load('./weights/method2(0.960).pt'))
     #print("\nModel weights loaded successfully")
 
     model.eval()  # Set the model to evaluation mode
@@ -98,7 +98,7 @@ with gr.Blocks() as app:
     gr.Markdown("### Pixelation Detection App")
 
     # Selecting method 
-    method = gr.Radio(["Method 1", "Method 2"], label="Select Method")
+    method = gr.Radio(["Method 1", "Method 2 (Proposed Method)"], label="Select Method")
 
     with gr.Tab("Classification by image"):
         image_input = gr.Image(type="numpy", label="Upload an image")
