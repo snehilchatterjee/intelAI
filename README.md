@@ -26,6 +26,8 @@ The models are hosted on HuggingFace :hugs:, but please note that their speed mi
 
 ## :stop_sign: IMPORTANT!!!!!!!
 
+**Correction part is again in development due to some issues that came up while testing**
+
 When running **locally**, ensure you use only the versions of libraries mentioned in `requirements.txt`. I've observed significant and incorrect differences in results when using different versions.
 
 ## :bookmark_tabs: Table of Contents
