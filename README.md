@@ -37,7 +37,7 @@ When running **locally**, ensure you use only the versions of libraries mentione
 - [Training and Testing Details](#training-and-testing-details)
 - [Inference: Detection](#inference-detection)
 - [Inference: Correction](#inference-correction)
-- [In Detail](#in-detail)
+- [Directory Structure](#directory-structure)
 - [Future Work](#future-work)
 - [Contributing](#contributing)
 
