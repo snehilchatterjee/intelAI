@@ -333,19 +333,19 @@ def translate_image(image, sharpen, model_name, save):
             sr_img.save('super_resolved_image.png')
         
         return sr_img
-
+    
 interface = gr.Interface(
     fn=translate_image,
     inputs=[
         gr.Image(type="pil"),
         gr.Checkbox(label="Sharpen Image"),
-        gr.Radio(choices=["MobileSR", "EDSR", "MiniSRGAN", "MiniSRResNET"], label="Select Model"),
-        gr.Radio(choices=["True", "False"], label="Save Output")
+        gr.Radio(choices=["MobileSR", "MiniSRGAN", "MiniSRResNET"], label="Select Model", value="MobileSR"),
+        gr.Radio(choices=["True", "False"], label="Save Output", value="False")
     ],
     outputs=gr.Image(type="pil", label="Translated Image"),
     title="Correction App",
     description="Upload an image and get the translated version. Some images may be blurry, you can tick the checkbox to sharpen them. Choose between three different models for translation.(For close-up shots, MobileSR delivers superior performance, while EDSR excels in handling distant shots.)",
-    allow_flagging='never' 
+    allow_flagging='never'
 )
 
 # Launch the Gradio app
