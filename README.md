@@ -155,15 +155,15 @@ Close up (MobileSR):
 ***3) MiniSRGAN***
 
 <p float="left">
-  <img src="./testing_correction//Set5/image_SRF_4/LR/5.png" width="400" />
+  <img src="./testing_correction/Set5/image_SRF_4/LR/5.png" width="400" />
   <img src="./testing_correction/super_resolved_Set5_images_miniSRGAN/5.png" width="400" />
-  <img src="./testing_correction//Set5/image_SRF_4/LR/4.png" width="400" />
+  <img src="./testing_correction/Set5/image_SRF_4/LR/4.png" width="400" />
   <img src="./testing_correction/super_resolved_Set5_images_miniSRGAN/4.png" width="400" />
-  <img src="./testing_correction//Set5/image_SRF_4/LR/3.png" width="400" />
+  <img src="./testing_correction/Set5/image_SRF_4/LR/3.png" width="400" />
   <img src="./testing_correction/super_resolved_Set5_images_miniSRGAN/3.png" width="400" />
-  <img src="./testing_correction//Set5/image_SRF_4/LR/2.png" width="400" />
+  <img src="./testing_correction/Set5/image_SRF_4/LR/2.png" width="400" />
   <img src="./testing_correction/super_resolved_Set5_images_miniSRGAN/2.png" width="400" />
-  <img src="./testing_correction//Set5/image_SRF_4/LR/1.png" width="400" />
+  <img src="./testing_correction/Set5/image_SRF_4/LR/1.png" width="400" />
   <img src="./testing_correction/super_resolved_Set5_images_miniSRGAN/1.png" width="400" />
 </p>
 
