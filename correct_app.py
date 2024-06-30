@@ -284,6 +284,7 @@ def translate_image(image, sharpen, model_name, save):
     elif(model_name=='MiniSRGAN'):
         model = MiniSRGAN().to(device)
         model.load_state_dict(torch.load('./weights/miniSRGAN.pt'))
+        model.eval()
         
         inputs = np.array(resized_image)
         inputs = (inputs / 127.5) - 1.0   
@@ -293,6 +294,22 @@ def translate_image(image, sharpen, model_name, save):
             output, _ = model(torch.unsqueeze(inputs,dim=0))
         output = output[0].cpu().numpy()
         output = np.clip(output, -1.0, 1.0)
+        output = (output + 1.0) / 2.0
+        output = output.transpose(1, 2, 0)
+        sr_img = Image.fromarray((output * 255.0).astype(np.uint8))
+        
+    elif(model_name=='MiniSRResNET'):
+        model = MiniSRGAN().to(device)
+        model.load_state_dict(torch.load('./weights/miniSRResNET.pt'))
+        
+        inputs = np.array(resized_image)
+        inputs = (inputs / 127.5) - 1.0   
+        inputs = torch.tensor(inputs.transpose(2, 0, 1).astype(np.float32)).to(device)
+        model.eval()
+        
+        with torch.no_grad():
+            output, _ = model(torch.unsqueeze(inputs,dim=0))
+        output = output[0].cpu().numpy()
         output = (output + 1.0) / 2.0
         output = output.transpose(1, 2, 0)
         sr_img = Image.fromarray((output * 255.0).astype(np.uint8))
@@ -322,7 +339,7 @@ interface = gr.Interface(
     inputs=[
         gr.Image(type="pil"),
         gr.Checkbox(label="Sharpen Image"),
-        gr.Radio(choices=["MobileSR", "EDSR", "MiniSRGAN"], label="Select Model"),
+        gr.Radio(choices=["MobileSR", "EDSR", "MiniSRGAN", "MiniSRResNET"], label="Select Model"),
         gr.Radio(choices=["True", "False"], label="Save Output")
     ],
     outputs=gr.Image(type="pil", label="Translated Image"),
