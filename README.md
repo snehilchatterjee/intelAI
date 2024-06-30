@@ -157,12 +157,20 @@ Close up (MobileSR):
 <p float="left">
   <img src="images/Set5/5.png" width="200" />
   <img src="images/super_resolved_Set5_images_miniSRGAN/5.png" width="200" />
+</p>
+<p float="left">
   <img src="images/Set5/4.png" width="200" />
   <img src="images/super_resolved_Set5_images_miniSRGAN/4.png" width="200" />
+</p>
+<p float="left">
   <img src="images/Set5/3.png" width="200" />
   <img src="images/super_resolved_Set5_images_miniSRGAN/3.png" width="200" />
+</p>
+<p float="left">
   <img src="images/Set5/2.png" width="200" />
   <img src="images/super_resolved_Set5_images_miniSRGAN/2.png" width="200" />
+</p>
+<p float="left">
   <img src="images/Set5/1.png" width="200" />
   <img src="images/super_resolved_Set5_images_miniSRGAN/1.png" width="200" />
 </p>
