@@ -71,7 +71,7 @@ The baseline model was not evaluated on the Div2K dataset due to its poor perfor
 | **F1 Score**     | 0.921875                    | 0.4899                |
 | **Accuracy**     | 0.9300595                   | 0.5556                |
 | **False Positives** | 4.58%                    | 32.867%               |
-| **Speed**        | 3489 FPS                    | 3951 FPS              |
+| **Speed**        | 3505 FPS                    | 3522 FPS              |
 | **Model Size**   | 5.844 MB                    | 5.844 MB              |
 
 ### Confusion Matrices:
@@ -94,7 +94,7 @@ The baseline model was not evaluated on the Div2K dataset due to its poor perfor
 | **F1 Score**     | 0.9084967                |
 | **Accuracy**     | 0.9046053                |
 | **False Positives** | 9.52%                 |
-| **Speed**        | 3489 FPS                 |
+| **Speed**        | 3505 FPS                 |
 | **Model Size**   | 5.844 MB                 |
 
 ### Confusion Matrix:
@@ -235,45 +235,49 @@ Upload an image and click submit!
 Example:
 ![Correction Result](./images/correct_result.png)
 
-## In Detail
+## Directory Structure
 
 ```
-├── detection_method 1 [Pixelated].ipynb  - Training notebook file for detection method 1 (baseline)
-│ 
-|
-├── detection_method 2 [Pixelated].ipynb  - Training notebook file for detection method 2 (proposed method)
-│ 
-|   
-├── Training_Correction.ipynb  - Training notebook file for correction method (proposed method)
+├── training_detection
+│   ├── detection_method_1_Pixelated.ipynb    - Training notebook for detection method 1 (baseline)
+│   └── detection_method_2_Pixelated.ipynb    - Training notebook for detection method 2 (proposed method)
 │
-|    
-├── Testing_Correction_Result.ipynb  - Notebook file used to obtain images/sr_result.png and images/sr_closeup.png
+├── training_correction
+│   ├── Training_Correction.ipynb             - Training notebook for correction method (MobileSR)
+│   └── MiniSRGAN                             - Scripts for training correction models (MiniSRGAN and MiniSRResNet)
 │
-|
-├── test_detect.ipynb  - Test notebook file for detection method 2 (proposed method)
+├── testing_correction
+│   ├── Testing_Correction_Result.ipynb       - Notebook for obtaining images/sr_result.png and images/sr_closeup.png for MobileSR
+│   ├── model_evaluation_set5.ipynb           - Notebook for evaluating all models on the Set5 dataset
+│   ├── model_inference_set5.ipynb            - Notebook for performing inference on the Set5 dataset
+│   ├── test_correct_sample2.ipynb            - Notebook for evaluating the sample2 image file
+│   └── super_resolved_Set5_images_{model}    - Directory containing images obtained from inference
 │
-|
-├── test_correct.ipynb  - Test notebook file for correction
+├── testing_detection
+│   └── test_detect.ipynb                     - Test notebook for detection method 2 (proposed method)
 │
-|
-├── time_calculation.ipynb  - Time measurement notebook for the detection method and the correction method
-│ 
-|
-├── model_size.ipynb  - Model size measurement notebook for the detection method and the correction method
+├── time_calculation
+│   └── time_calculation.ipynb                - Time measurement notebook for the detection and correction methods
 │
-| 
+├── model_size_calculation
+│   └── model_size.ipynb                      - Model size measurement notebook for the detection and correction methods
+│
 ├── experiment_detection  
-│   └── comparison_n  - Contains comparison between low_res and high_res image
-│   └── solo_n        - Contains low_res version of sample images
-│  
-| 
-├── images             - Contains readme.md images
-│ 
-| 
-├── detect_app.py       - Detection inference app.py file
+│   ├── comparison_n                          - Directory containing comparisons between low_res and high_res images
+│   └── solo_n                                - Directory containing low_res versions of sample images
 │
-|
-├── correct_app.py       - Correction inference app.py file
+├── images                                    - Directory containing readme.md images
+│
+├── image_analysis
+│   └── pixel_detection_analysis.ipynb        - Notebook for degrading and storing sample images (experiment_detection folder)
+│
+├── sample2_correction_model_results          - Directory containing sample2 inference images for all models
+│
+├── weights                                   - Directory containing weights of the trained models
+│
+├── detect_app.py                             - Detection inference app.py file
+│
+└── correct_app.py                            - Correction inference app.py file
 ```
 
 ## Future Work
