@@ -152,7 +152,7 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 Close up (MobileSR):
 ![Close-up Super Resolution Result](images/sr_closeup.png)
 
-***3) MiniSRGAN***
+***3) MiniSRGAN (input -> output)***
 
 <p float="left">
   <img src="images/Set5/5.png" width="400" />
