@@ -6,9 +6,9 @@
 </p>
 
 
-**🚀 DeepClarity** introduces novel models designed from scratch to address the dual challenges of **detecting and enhancing pixelated** images with **exceptional speeds**. The proposed detection model, leveraging **MobileNet_v3_small used with Canny edge detection**, demonstrates significant improvements over baseline methods on datasets like **Div2K** and **Flickr2K**, achieving higher precision, recall, F1 score, and accuracy while maintaining a lower false positive rate. Despite a slightly reduced speed compared to the baseline, the model remains efficient, operating at **3489 FPS**. ⚡
+**🚀 DeepClarity** introduces novel models designed from scratch to address the dual challenges of **detecting and enhancing pixelated images** with **exceptional speeds**. The proposed detection model, leveraging **MobileNet_v3_small combined with Canny edge detection**, demonstrates significant improvements over baseline methods on datasets like **Div2K** and **Flickr2K**. This model achieves higher precision, recall, F1 score, and accuracy while maintaining a lower false positive rate. Despite a slightly reduced speed compared to the baseline, the model remains efficient, operating at **3505 FPS**. ⚡
 
-For image correction, the project introduces **MobileSR**, a super resolution model based on SRGAN with modified generator architecture, showcasing enhanced performance in terms of PSNR, SSIM, and LPIPS metrics compared to traditional methods like Bicubic and other deep learning approaches. MobileSR strikes a balance between visual quality and computational efficiency, operating at **28 FPS** with a compact model size of **0.482 MB**. 🖼️✨
+For image correction, the project introduces **MobileSR** and **MiniSRGAN**, which are based on SRGAN with modified generator architectures. These models showcase enhanced performance in terms of PSNR, SSIM, LPIPS metrics, and speed compared to traditional methods like Bicubic and other deep learning approaches (such as EDSR and FSRCNN). MobileSR and MiniSRGAN strike a balance between visual quality and computational efficiency, operating at **28 FPS** and **21 FPS** respectively, with a compact model size of **0.482 MB** and **3.605 MB**. 🖼️✨
 
 Both models were implemented entirely from scratch and are hosted on HuggingFace for accessibility, although optimal performance is observed with GPU-based execution. 
 <p align="center">
@@ -103,7 +103,7 @@ The baseline model was not evaluated on the Div2K dataset due to its poor perfor
 
 ### Summary
 
-The proposed method outperforms the baseline significantly across all evaluation metrics on the Flickr2K dataset. It achieves higher precision, recall, F1 score, and accuracy, while maintaining a much lower false positive rate. Although the proposed method has a slightly slower speed (3489 FPS vs. 3951 FPS), it is still extremely efficient and the trade-off is justified by the substantial improvements in other metrics. The model size remains consistent across both methods. 
+The proposed method outperforms the baseline significantly across all evaluation metrics on the Flickr2K dataset. It achieves higher precision, recall, F1 score, and accuracy, while maintaining a much lower false positive rate. The model size remains consistent across both methods. 
 
 Overall, the proposed method demonstrates superior performance and is a clear improvement over the baseline, especially in terms of accuracy and reliability.
 
@@ -163,6 +163,11 @@ Close up:
 
 ![mobilesr](images/generator_architecture_white.jpeg)
 
+### MiniSRGAN/MiniSRResNet Architecture:
+
+Here B = 8 (for 8 residual blocks)
+
+![miniSRGAN](image.png)
 
 ## Requirements
 
@@ -181,12 +186,14 @@ The detector was tested in two phases:
 1. Test split of the Flickr2K dataset, consisting of 284 images.
 2. The full dataset of Div2K (train + val) to ensure the images were entirely independent of the trained dataset.
 
-#### Super Resolution Model Training
-The super resolution model was trained on a subset of the [COCO dataset](https://cocodataset.org/), using a total of 21,837 images.
+#### Super Resolution Model Training (MobileSR)
+This super resolution model was trained on a subset of the [COCO dataset](https://cocodataset.org/), using a total of 21,837 images.
 
-#### Super Resolution Model Testing
-The testing of the super resolution model was conducted using 166 randomly picked images from the Flickr2K dataset.
+#### Super Resolution Model Validation (MobileSR)
+The testing of this super resolution model was conducted using 166 randomly picked images from the Flickr2K dataset.
 
+#### Super Resolution Model Training (MiniSRGAN)
+This super resolution model was trained on a train set of the [Div2K dataset](https://data.vision.ee.ethz.ch/cvl/DIV2K/), using a total of 800 images.
 
 ## Inference: Detection
 
