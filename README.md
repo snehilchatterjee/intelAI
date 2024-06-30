@@ -119,29 +119,18 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 **Performance:**
 
 
-### Comparison of Image Super-Resolution Methods (Evaluated on Sample2.jpeg)
-
-| Metric            | Bicubic (Baseline)      | Proposed Method (MobileSR) | RealESRGAN               | FSRCNN                   | EDSR                     |
-|-------------------|-------------------------|----------------------------|--------------------------|--------------------------|--------------------------|
-| PSNR              | 27.23 dB                | 28.95 dB                   | 27.21 dB                 | 29.09 dB                 | 29.19 dB                 |
-| SSIM              | 0.6684                  | 0.7582                     | 0.7359                   | 0.7604                   | 0.7657                   |
-| LPIPS             | 0.2878                  | 0.3794                     | 0.4633                   | 0.5985                   | 0.6461                   |
-| Speed             | -                       | 28 FPS                     | <1 FPS                   | 188 FPS                  | 16 FPS                   |
-| Model Size        | -                       | 0.482 MB                   | 63.698 MB                | 0.049 MB                 | 5.789 MB                 |
-| Mean Opinion Score | 3.19                    | 4.00                       | 4.31                     | 3.06                     | 3.39                     |
+### Comparison of Image Super-Resolution Methods (Evaluated on Set5)
 
 
-Total opinions taken: 16
 
-Mean Opinion Score Plot:
+| Metric            | Bicubic (Baseline)      | MobileSR (Proposed)                   | MiniSRResNET (Proposed)             | MiniSRGAN (Proposed)                | EDSR                     | FSRCNN                   |
+|-------------------|-------------------------|----------------------------|---------------------------|---------------------------|--------------------------|--------------------------|
+| PSNR              | 27.76 dB                | 27.17 dB                   | 31.76 dB                  | 30.13 dB                  | 31.78 dB                 | 30.52 dB                 |
+| SSIM              | 0.7806                  | 0.7650                     | 0.8829                    | 0.8340                    | 0.8895                   | 0.8548                   |
+| LPIPS             | 0.3658                  | 0.2000                     | 0.1928                    | 0.1264                    | 0.1922                   | 0.2013                   |
+| Speed (FPS)       | -                       | 28                         | 21                        | 21                        | 16                       | 188                      |
+| Model Size (MB)   | -                       | 0.482                      | 3.605                     | 3.605                     | 5.789                    | 0.049                    |
 
-![MOS](images/mean_ratings_plot_beautiful.png)
-
-Mean Opinion Score Results: [Results](https://docs.google.com/spreadsheets/d/1gVwDEkZqQh_vei8I5QgR4UZ0rX_byFTNz3BPfMHUns8/edit?usp=sharing)
-
-## Summary:
-
-In summary, RealESRGAN excels in visual quality but suffers from artificial looks and impractically large model size. FSRCNN is extremely fast with a tiny model size but sacrifices visual quality. EDSR falls short in visual quality and speed requirements. The proposed method (MobileSR) strikes a balance by offering good visual quality close to RealESRGAN, with no artificial looks, optimal model size for embedded systems, and sufficient speed for real-time applications, making it a strong candidate for practical implementations where a blend of performance and efficiency is crucial.
 
 
 **Sample Output:**
