@@ -8,7 +8,7 @@
 
 **🚀 DeepClarity** introduces novel models designed from scratch to address the dual challenges of **detecting and enhancing pixelated images** with **exceptional speeds**. The proposed detection model, leveraging **MobileNet_v3_small combined with Canny edge detection**, demonstrates significant improvements over baseline methods on datasets like **Div2K** and **Flickr2K**. This model achieves higher precision, recall, F1 score, and accuracy while maintaining a lower false positive rate. Despite a slightly reduced speed compared to the baseline, the model remains efficient, operating at **3505 FPS**. ⚡
 
-For image correction, the project introduces three new novel variants of SRGAN namely **MobileSR**, **MiniSRGAN** and **TinySRGAN**. These models showcase enhanced performance in terms of PSNR, SSIM, LPIPS metrics, and speed compared to traditional methods like Bicubic and other deep learning approaches (such as EDSR FSRCNN and SRGAN). MobileSR, MiniSRGAN and TinySRGAN strike a balance between visual quality and computational efficiency, operating at **28 FPS**, **21 FPS** and **48 FPS!!!** respectively, with a compact model size of **0.482 MB**,**3.605 MB** and **0.780 MB**. 🖼️✨
+For image correction, the project introduces three new novel variants of SRGAN namely **MobileSR**, **MiniSRGAN** and **TinySRGAN**. These models showcase enhanced performance in terms of PSNR, SSIM, LPIPS metrics, and speed compared to traditional methods like Bicubic and other deep learning approaches (such as EDSR, FSRCNN and SRGAN). MobileSR, MiniSRGAN and TinySRGAN strike a balance between visual quality and computational efficiency, operating at **28 FPS**, **21 FPS** and **48 FPS!!!** respectively, with a compact model size of **0.482 MB**,**3.605 MB** and **0.780 MB**. 🖼️✨
 
 Both models were implemented entirely from scratch and are hosted on HuggingFace for accessibility, although optimal performance is observed with GPU-based execution. 
 <p align="center">
@@ -117,8 +117,6 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 | LPIPS             | 0.3658                  | 0.2000                     | 0.1264                    | 0.1554                    | 0.1928                    | 0.1118                   | 0.1922                   | 0.2013                   |
 | Speed (FPS)       | -                       | 28                         | 21                        | 48                        | 21                        | 12                       | 16                       | 188                      |
 | Model Size (MB)   | -                       | 0.482                      | 3.605                     | 0.780                     | 3.605                     | 5.874                    | 5.789                    | 0.049                    |
-
-Let me know if you need any further modifications!
 
 **Sample Output:**
 
