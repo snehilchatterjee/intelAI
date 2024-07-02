@@ -265,8 +265,8 @@ Example:
 │   └── detection_method_2_Pixelated.ipynb    - Training notebook for detection method 2 (proposed method)
 │
 ├── training_correction
-│   ├── Training_Correction.ipynb             - Training notebook for correction method (MobileSR)
-│   └── MiniSRGAN                             - Scripts for training correction models (MiniSRGAN and MiniSRResNet)
+│   ├── training_mobilesr.ipynb               - Training notebook for correction method (MobileSR)
+│   └── training_tinysrgan.ipynb              - Scripts for training correction models (TinySRGAN)
 │
 ├── testing_correction
 │   ├── Testing_Correction_Result.ipynb       - Notebook for obtaining images/sr_result.png and images/sr_closeup.png for MobileSR
@@ -280,7 +280,8 @@ Example:
 │
 ├── time_calculation
 │   └── time_calculation.ipynb                - Time measurement notebook for the detection and correction methods
-│
+│   └── time_calculation_tinysrgan.ipynb      - Time measurement notebook for TinySRGAN
+|
 ├── model_size_calculation
 │   └── model_size.ipynb                      - Model size measurement notebook for the detection and correction methods
 │
