@@ -110,15 +110,13 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 ### Comparison of Image Super-Resolution Methods (Evaluated on Set5)
 
 
-
-| Metric            | Bicubic (Baseline)      | MobileSR (Proposed)                   | MiniSRResNET (Proposed)             | MiniSRGAN (Proposed)                | EDSR                     | FSRCNN                   |
-|-------------------|-------------------------|----------------------------|---------------------------|---------------------------|--------------------------|--------------------------|
-| PSNR              | 27.76 dB                | 27.17 dB                   | 31.76 dB                  | 30.13 dB                  | 31.78 dB                 | 30.52 dB                 |
-| SSIM              | 0.7806                  | 0.7650                     | 0.8829                    | 0.8340                    | 0.8895                   | 0.8548                   |
-| LPIPS             | 0.3658                  | 0.2000                     | 0.1928                    | 0.1264                    | 0.1922                   | 0.2013                   |
-| Speed (FPS)       | -                       | 28                         | 21                        | 21                        | 16                       | 188                      |
-| Model Size (MB)   | -                       | 0.482                      | 3.605                     | 3.605                     | 5.789                    | 0.049                    |
-
+| Metric            | Bicubic (Baseline)      | MobileSR (Proposed)        | MiniSRGAN (Proposed)      | TinySRGAN (Proposed)      | MiniSRResNET (Proposed)  | EDSR                     | FSRCNN                   |
+|-------------------|-------------------------|----------------------------|---------------------------|---------------------------|---------------------------|--------------------------|--------------------------|
+| PSNR              | 27.76 dB                | 27.17 dB                   | 30.13 dB                  | 30.64 dB                  | 31.76 dB                  | 31.78 dB                 | 30.52 dB                 |
+| SSIM              | 0.7806                  | 0.7650                     | 0.8340                    | 0.8576                    | 0.8829                    | 0.8895                   | 0.8548                   |
+| LPIPS             | 0.3658                  | 0.2000                     | 0.1264                    | 0.1554                    | 0.1928                    | 0.1922                   | 0.2013                   |
+| Speed (FPS)       | -                       | 28                         | 21                        | 48                        | 21                        | 16                       | 188                      |
+| Model Size (MB)   | -                       | 0.482                      | 3.605                     | 0.780                     | 3.605                     | 5.789                    | 0.049                    |
 
 
 **Sample Output:**
@@ -130,7 +128,7 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 Close up (MobileSR):
 ![Close-up Super Resolution Result](images/sr_closeup.png)
 
-***2) MiniSRGAN (input -> output)***
+***2) Set5***
 
 <p align="center">
   <b>Original</b> | <b>MobileSR</b>  |<b>MiniSRGAN</b> | <b>TinySRGAN</b>
