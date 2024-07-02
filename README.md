@@ -110,7 +110,7 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 ### Comparison of Image Super-Resolution Methods (Evaluated on Set5)
 
 
-| Metric            | Bicubic (Baseline)      | MobileSR (Proposed)        | MiniSRGAN (Proposed)      | TinySRGAN (Proposed)      | MiniSRResNET (Proposed)  | EDSR                     | FSRCNN                   |
+| Metric            | Bicubic (Baseline)      | MobileSR (Proposed)        | MiniSRGAN (Proposed)      | TinySRGAN (Proposed)      | MiniSRResNET              | EDSR                     | FSRCNN                   |
 |-------------------|-------------------------|----------------------------|---------------------------|---------------------------|---------------------------|--------------------------|--------------------------|
 | PSNR              | 27.76 dB                | 27.17 dB                   | 30.13 dB                  | 30.64 dB                  | 31.76 dB                  | 31.78 dB                 | 30.52 dB                 |
 | SSIM              | 0.7806                  | 0.7650                     | 0.8340                    | 0.8576                    | 0.8829                    | 0.8895                   | 0.8548                   |
