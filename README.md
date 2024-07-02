@@ -107,16 +107,6 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 
 ###  <ins>Correction Results: </ins>
 
-### Super Resolution with MobileSR
-
-**Method:**
-
-- SRGAN with a modified generator incorporating depthwise separable convolutions in residual blocks.
-- Bilinear upsampling for improved performance in the final stage.
-
-**Performance:**
-
-
 ### Comparison of Image Super-Resolution Methods (Evaluated on Set5)
 
 
