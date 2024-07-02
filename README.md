@@ -123,45 +123,53 @@ Overall, the proposed method demonstrates superior performance and is a clear im
 
 **Sample Output:**
 
-***1) (480 x 320) -----> (1920 x 1280)***
 
-<p float="left">
-  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_Input.png" width="400" />
-  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_MobileSR.png" width="400" />
-  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_FSRCNN.png" width="400" />
-  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_EDSR.png" width="400" />
-  <img src="images/Labeled_Cropped/Upscaled%20Image%20914x609_RealESRGAN.png" width="400" />
-  <img src="images/Labeled_Cropped/GroundTruth.png" width="400" />
-</p>
-
-***2) Top Row: Input, Middle Row: Output, Bottom Row: Target (MobileSR)***
+***1) Top Row: Input, Middle Row: Output, Bottom Row: Target (MobileSR)***
 
 ![Super Resolution Result](images/sr_result.png)
 Close up (MobileSR):
 ![Close-up Super Resolution Result](images/sr_closeup.png)
 
-***3) MiniSRGAN (input -> output)***
+***2) MiniSRGAN (input -> output)***
 
 <p align="center">
-  <img src="images/Set5/5.png" width="200" />
-  <img src="images/super_resolved_Set5_images_miniSRGAN/5.png" width="200" />
+  <b>Original</b> | <b>MobileSR</b>  |<b>MiniSRGAN</b> | <b>TinySRGAN</b>
 </p>
+<p align="center">
+  <img src="images/Set5/5.png" width="200" />
+  <img src="images/super_resolved_Set5_images_mobileSR/5.png" width="200" />
+  <img src="images/super_resolved_Set5_images_miniSRGAN/5.png" width="200" />
+  <img src="images/super_resolved_Set5_images_tinySRGAN/5.png" width="200" />
+</p>
+
 <p align="center">
   <img src="images/Set5/4.png" width="200" />
+  <img src="images/super_resolved_Set5_images_mobileSR/4.png" width="200" />
   <img src="images/super_resolved_Set5_images_miniSRGAN/4.png" width="200" />
+  <img src="images/super_resolved_Set5_images_tinySRGAN/4.png" width="200" />
 </p>
+
 <p align="center">
   <img src="images/Set5/3.png" width="200" />
+  <img src="images/super_resolved_Set5_images_mobileSR/3.png" width="200" />
   <img src="images/super_resolved_Set5_images_miniSRGAN/3.png" width="200" />
+  <img src="images/super_resolved_Set5_images_tinySRGAN/3.png" width="200" />
 </p>
+
 <p align="center">
   <img src="images/Set5/2.png" width="200" />
+  <img src="images/super_resolved_Set5_images_mobileSR/2.png" width="200" />
   <img src="images/super_resolved_Set5_images_miniSRGAN/2.png" width="200" />
+  <img src="images/super_resolved_Set5_images_tinySRGAN/2.png" width="200" />
 </p>
+
 <p align="center">
   <img src="images/Set5/1.png" width="200" />
+  <img src="images/super_resolved_Set5_images_mobileSR/1.png" width="200" />
   <img src="images/super_resolved_Set5_images_miniSRGAN/1.png" width="200" />
+  <img src="images/super_resolved_Set5_images_tinySRGAN/1.png" width="200" />
 </p>
+
 
 
 ## Architecture
