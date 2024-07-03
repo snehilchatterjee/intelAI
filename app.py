@@ -391,11 +391,9 @@ interface = gr.Interface(
     fn=model2_inf,
     inputs=gr.Image(type="numpy"),
     outputs=[gr.Textbox(label="Result"), gr.Image(label="Processed Image")],
-    title="Pixelation Detection App",
+    title="DeepClarity",
     description="Upload an image to check if it is pixelated. If the image is pixelated, the processed image will be displayed.",
     allow_flagging='never'
 )
 
-interface.launch()
-# Launch the Gradio app
 interface.launch()
