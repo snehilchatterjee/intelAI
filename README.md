@@ -19,6 +19,19 @@ Both models were implemented entirely from scratch and are hosted on HuggingFace
     <img src="images/sr_closeup_transition.gif" width=300px>
     </p>
 
+## :bookmark_tabs: Table of Contents
+- [Try it yourself](#fire-try-it-yourself-fire)
+- [Results](#results)
+- [Model Architecture](#architecture)
+- [Requirements](#requirements)
+- [Training and Testing Details](#training-and-testing-details)
+- [Inference: Detection](#inference-detection)
+- [Inference: Correction](#inference-correction)
+- [Directory Structure](#directory-structure)
+- [Future Work](#future-work)
+- [Contributing](#contributing)
+
+
 ## :fire: Try it yourself!!!! :fire:
 
 The models are hosted on HuggingFace :hugs:, but please note that their speed might not be optimal since they are running on CPUs (free tier).
@@ -32,18 +45,6 @@ The models are hosted on HuggingFace :hugs:, but please note that their speed mi
 ## :stop_sign: IMPORTANT!!!!!!!
 
 When running **locally**, ensure you use only the versions of libraries mentioned in `requirements.txt`. I've observed significant and incorrect differences in results when using different versions.
-
-## :bookmark_tabs: Table of Contents
-- [Results](#results)
-- [Model Architecture](#architecture)
-- [Requirements](#requirements)
-- [Training and Testing Details](#training-and-testing-details)
-- [Inference: Detection](#inference-detection)
-- [Inference: Correction](#inference-correction)
-- [Directory Structure](#directory-structure)
-- [Future Work](#future-work)
-- [Contributing](#contributing)
-
 
 ## :star: Results
 
