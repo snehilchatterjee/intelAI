@@ -6,15 +6,18 @@
 </p>
 
 
+**Final Solution Presentation: [PPT](https://docs.google.com/presentation/d/1owT0P4APnO378lmpZcQmLeYKn2GElC5S8DXPNUTS33Q/)**
+
+
 **🚀 DeepClarity** introduces novel models designed from scratch to address the dual challenges of **detecting and enhancing pixelated images** with **exceptional speeds**. The proposed detection model, leveraging **MobileNet_v3_small combined with Canny edge detection**, demonstrates significant improvements over baseline methods on datasets like **Div2K** and **Flickr2K**. This model achieves higher precision, recall, F1 score, and accuracy while maintaining a lower false positive rate. Despite a slightly reduced speed compared to the baseline, the model remains efficient, operating at **3505 FPS**. ⚡
 
 For image correction, the project introduces three new novel variants of SRGAN namely **MobileSR**, **MiniSRGAN** and **TinySRGAN**. These models showcase enhanced performance in terms of PSNR, SSIM, LPIPS metrics, and speed compared to traditional methods like Bicubic and other deep learning approaches (such as EDSR, FSRCNN and SRGAN). MobileSR, MiniSRGAN and TinySRGAN strike a balance between visual quality and computational efficiency, operating at **28 FPS**, **21 FPS** and **48 FPS!!!** respectively, with a compact model size of **0.482 MB**,**3.605 MB** and **0.780 MB**. 🖼️✨
 
 Both models were implemented entirely from scratch and are hosted on HuggingFace for accessibility, although optimal performance is observed with GPU-based execution. 
+
 <p align="center">
     <img src="images/sr_closeup_transition.gif" width=300px>
     </p>
-
 
 ## :fire: Try it yourself!!!! :fire:
 
@@ -23,6 +26,8 @@ The models are hosted on HuggingFace :hugs:, but please note that their speed mi
 **Detection Model:** [IntelAI Detection](https://huggingface.co/spaces/snehilchatterjee/intelAI_detection)
 
 **Correction Model:** [IntelAI Correction](https://huggingface.co/spaces/snehilchatterjee/intelAIcorrect)
+
+**Unified App:** [IntelAI App](https://huggingface.co/spaces/snehilchatterjee/deepclarity)
 
 ## :stop_sign: IMPORTANT!!!!!!!
 
