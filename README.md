@@ -23,8 +23,8 @@ Both models were implemented entirely from scratch and are hosted on HuggingFace
 - [Try It Yourself](#fire-try-it-yourself-fire)
 - [Results](#results)
 - [Model Architecture](#architecture)
-- [Requirements](#requirements)
 - [Training and Testing Details](#training-and-testing-details)
+- [Requirements](#requirements)
 - [Inference: Detection](#inference-detection)
 - [Inference: Correction](#inference-correction)
 - [Directory Structure](#directory-structure)
@@ -192,12 +192,6 @@ Here B = 8 (for 8 residual blocks)
 
 ![miniSRGAN](images/minisrgan_architecture.png)
 
-## Requirements
-
-Install the necessary libraries:
-```sh
-pip install -r requirements.txt
-```
 
 ## Training and Testing Details
 
@@ -209,6 +203,7 @@ The detector was tested in two phases:
 1. Test split of the Flickr2K dataset, consisting of 284 images.
 2. The full dataset of Div2K (train + val) to ensure the images were entirely independent of the trained dataset.
 
+
 #### Super Resolution Model Training (MobileSR)
 This super resolution model was trained on a subset of the [COCO dataset](https://cocodataset.org/), using a total of 21,837 images.
 
@@ -217,6 +212,13 @@ The testing of this super resolution model was conducted using 166 randomly pick
 
 #### Super Resolution Model Training (MiniSRGAN)
 This super resolution model was trained on a train set of the [Div2K dataset](https://data.vision.ee.ethz.ch/cvl/DIV2K/), using a total of 800 images.
+
+## Requirements
+
+Install the necessary libraries:
+```sh
+pip install -r requirements.txt
+```
 
 ## :stop_sign: IMPORTANT!!!!!!!
 
