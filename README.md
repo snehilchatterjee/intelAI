@@ -208,10 +208,17 @@ The detector was tested in two phases:
 This super resolution model was trained on a subset of the [COCO dataset](https://cocodataset.org/), using a total of 21,837 images.
 
 #### Super Resolution Model Validation (MobileSR)
-The testing of this super resolution model was conducted using 166 randomly picked images from the Flickr2K dataset.
+The validation of this super resolution model was conducted using 166 randomly picked images from the Flickr2K dataset.
 
 #### Super Resolution Model Training (MiniSRGAN)
 This super resolution model was trained on a train set of the [Div2K dataset](https://data.vision.ee.ethz.ch/cvl/DIV2K/), using a total of 800 images.
+
+#### Super Resolution Model Training (TinySRGAN)
+This super resolution model was trained on a train set of the [Div2K dataset](https://data.vision.ee.ethz.ch/cvl/DIV2K/), using a total of 800 images.
+
+
+#### Testing of Proposed SR Models:
+The testing of the super resolution model was done on the [Set5](https://figshare.com/articles/dataset/BSD100_Set5_Set14_Urban100/21586188) dataset
 
 ## Requirements
 
