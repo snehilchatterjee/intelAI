@@ -20,7 +20,7 @@ Both models were implemented entirely from scratch and are hosted on HuggingFace
     </p>
 
 ## :bookmark_tabs: Table of Contents
-- [Try it yourself](#fire-try-it-yourself-fire)
+- [Try It Yourself](#fire-try-it-yourself-fire)
 - [Results](#results)
 - [Model Architecture](#architecture)
 - [Requirements](#requirements)
@@ -42,9 +42,6 @@ The models are hosted on HuggingFace :hugs:, but please note that their speed mi
 
 **Unified App:** [IntelAI App](https://huggingface.co/spaces/snehilchatterjee/deepclarity)
 
-## :stop_sign: IMPORTANT!!!!!!!
-
-When running **locally**, ensure you use only the versions of libraries mentioned in `requirements.txt`. I've observed significant and incorrect differences in results when using different versions.
 
 ## :star: Results
 
@@ -220,6 +217,10 @@ The testing of this super resolution model was conducted using 166 randomly pick
 
 #### Super Resolution Model Training (MiniSRGAN)
 This super resolution model was trained on a train set of the [Div2K dataset](https://data.vision.ee.ethz.ch/cvl/DIV2K/), using a total of 800 images.
+
+## :stop_sign: IMPORTANT!!!!!!!
+
+When running **locally**, ensure you use only the versions of libraries mentioned in `requirements.txt`. I've observed significant and incorrect differences in results when using different versions.
 
 ## Inference: Detection
 
