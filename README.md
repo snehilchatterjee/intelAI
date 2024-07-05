@@ -23,7 +23,8 @@ Both models were implemented entirely from scratch and are hosted on HuggingFace
 - [Try It Yourself](#fire-try-it-yourself-fire)
 - [Results](#results)
 - [Model Architecture](#architecture)
-- [Training and Testing Details](#training-and-testing-details)
+- [Training and Testing Dataset Details](#training-and-testing-dataset-details)
+- [Training Details](#training-details)
 - [Requirements](#requirements)
 - [Inference: Detection](#inference-detection)
 - [Inference: Correction](#inference-correction)
@@ -193,7 +194,7 @@ Here B = 8 (for 8 residual blocks)
 ![miniSRGAN](images/minisrgan_architecture.png)
 
 
-## Training and Testing Details
+## Training and Testing Dataset Details
 
 #### Detector Training
 The detector was trained on the train split of the Flickr2K dataset, which consists of 2,200 images.
@@ -219,6 +220,27 @@ This super resolution model was trained on a train set of the [Div2K dataset](ht
 
 #### Testing of Proposed SR Models:
 The testing of the super resolution model was done on the [Set5](https://figshare.com/articles/dataset/BSD100_Set5_Set14_Urban100/21586188) dataset
+
+## Training Details
+
+### Detector:
+**Problem**:
+
+- The models when trained on the COCO dataset (subset with ~21k images) performed poorly with HD images.
+
+**Solution:**
+
+- The dataset used for training was enriched with images exceeding 1920x1080 resolution.
+
+**Reasoning:**
+- Resizing an image from a higher resolution (e.g., HD) to a smaller size (224x224) retains more information compared to resizing a lower resolution image to the same size.
+- This additional information during training presumably helped the model generalize better to handle HD images during inference.
+Additional Preprocessing:
+
+The images undergo other standard preprocessing steps like Canny edge detection before being fed into the model.
+
+### Generator:
+No specialized training was conducted; models were trained using regular methods to generate images four times the size of the input. Preprocessing for MobileSR was performed dynamically during training. In contrast, preprocessing for TinySRGAN and MiniSRGAN was already completed, utilizing the Div2K dataset.
 
 ## Requirements
 
