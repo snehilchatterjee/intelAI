@@ -42,7 +42,7 @@ def method2_prep(image):
 
 
 
-def model2_inf(x):
+def model2_inf(x,save):
     print("Method 2")
 
     image = method2_prep(x).unsqueeze(dim=0)
@@ -67,7 +67,7 @@ def model2_inf(x):
         if prediction == 0:
             return "The image is not pixelated", None
         else:
-            return "The image is pixelated", translate_image(Image.fromarray(x), False, 'TinySRGAN', 'False')
+            return "The image is pixelated", translate_image(Image.fromarray(x), False, 'TinySRGAN', save)
 
 class _conv(nn.Conv2d):
     def __init__(self, in_channels, out_channels, kernel_size, stride, padding, bias):
@@ -389,7 +389,10 @@ def translate_image(image, sharpen, model_name, save):
 # Gradio interface
 interface = gr.Interface(
     fn=model2_inf,
-    inputs=gr.Image(type="numpy"),
+    inputs=[
+        gr.Image(type="numpy"),
+        gr.Radio(choices=["True", "False"], label="Save Output", value="False")
+        ],
     outputs=[gr.Textbox(label="Result"), gr.Image(label="Processed Image")],
     title="DeepClarity",
     description="Upload an image to check if it is pixelated. If the image is pixelated, the processed image will be displayed.",
