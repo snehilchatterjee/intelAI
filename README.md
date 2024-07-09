@@ -347,9 +347,7 @@ Example:
 
 ## Future Work
 
-June 21, 2024 : <s> Obtaining Mean Opinion Score and calculating other metrics for super-resolution tasks. </s>
-
-Making a pipeline which will detect and correct in the same app
+July 05, 2024: <s> Making a pipeline which will detect and correct in the same app </s>
 
 ## Contributing
 
